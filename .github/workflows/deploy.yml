@@ -21,9 +21,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          # Cache is disabled to prevent "lock file not found" errors in environments without a lockfile.
-          # cache: 'npm'
+          node-version: 22
+
+      - name: Log Node.js version
+        run: node --version
 
       - name: Install Dependencies
         run: npm install

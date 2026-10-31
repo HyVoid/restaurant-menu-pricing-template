@@ -1,22 +1,27 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Sans+SC:wght@100..900&display=swap');
-
 :root {
-  /* ── Core Palette ── */
-  --color-primary:    #051C2C;
-  --color-accent:     #2251FF;
-  --color-bg:         #F5F5F2;
-  --color-muted:      #888888;
+  /* ── Section 3.1 Color Palette ── */
+  --bg:               #F5F5F2;
+  --surface:          #FFFFFF;
+  --brand:            #051C2C;
+  --accent:           #2251FF;
+  --muted:            #888888;
+  --ok:               #00C853;
+  --danger:           #D32F2F;
+  --input-bg:         #FFFDE7;
+
+  /* Semantic and backwards compatibility aliases */
+  --color-brand:      var(--brand);
+  --color-primary:    var(--brand);
+  --color-accent:     var(--accent);
+  --color-bg:         var(--bg);
+  --color-muted:      var(--muted);
   --color-body-text:  #1A1A2E;
- 
-  /* ── Semantic ── */
-  --color-positive:   #00C853;
-  --color-negative:   #D32F2F;
- 
-  /* ── Surface ── */
-  --color-surface:    #FFFFFF;
-  --color-input-bg:   #FFFDE7;
+  --color-positive:   var(--ok);
+  --color-negative:   var(--danger);
+  --color-surface:    var(--surface);
+  --color-input-bg:   var(--input-bg);
   --color-border:     #E8E8E6;
  
   /* ── Light Navigation Surface ── */

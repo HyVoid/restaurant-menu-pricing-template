@@ -574,7 +574,7 @@ export default function OrderSimulatorTab({
                 <div className="border-b border-dashed border-[var(--color-border)] pb-4 space-y-1.5 font-mono text-[11px] text-[var(--color-muted)]">
                   <div className="flex justify-between">
                     <span>Server Station:</span>
-                    <span className="font-semibold text-[var(--color-primary)]">Boulevard Simulator #1</span>
+                    <span className="font-semibold text-[var(--color-primary)]">POS Simulator #1</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Target Item:</span>

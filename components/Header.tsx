@@ -57,15 +57,15 @@ export default function Header({
       <div className="max-w-[1400px] mx-auto px-10 h-full flex items-center justify-between">
         {/* Left Side: Brand Logo & Label */}
         <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setActiveTab("dashboard")}>
-          <div className="w-8 h-8 rounded-lg bg-[var(--color-accent)] flex items-center justify-center text-white shadow-sm transition-transform hover:scale-105 active:scale-95 duration-200">
-            <Pizza size={18} className="stroke-[2.5]" />
+          <div className="w-8 h-8 rounded-lg bg-[var(--color-brand)] flex items-center justify-center text-white shadow-sm transition-transform hover:scale-105 active:scale-95 duration-200">
+            <Layers size={17} className="stroke-[2.5] text-white" />
           </div>
-          <div>
-            <h1 className="font-heading text-lg font-bold text-[var(--color-primary)] tracking-tight leading-none">
-              Boulevard Pizza
+          <div className="flex flex-col sm:flex-row sm:items-baseline sm:space-x-3">
+            <h1 className="font-heading text-[19px] font-bold text-[var(--color-brand)] tracking-tight leading-none">
+              Theseus Workshop
             </h1>
-            <span className="text-[10px] text-[var(--color-muted)] font-mono tracking-wider uppercase">
-              Pricing Master Workbook
+            <span className="text-[11px] text-[var(--color-muted)] font-mono tracking-wider uppercase sm:border-l sm:border-[var(--color-border)] sm:pl-3 mt-0.5 sm:mt-0 font-medium">
+              Restaurant Menu Master Workbook
             </span>
           </div>
         </div>

@@ -223,7 +223,8 @@ export default function Page() {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
     const downloadAnchor = document.createElement('a');
     downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", "boulevard_menu_master_backup.json");
+    const dateStr = new Date().toISOString().slice(0, 10);
+    downloadAnchor.setAttribute("download", `restaurant_menu_master_backup_${dateStr}.json`);
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
@@ -291,7 +292,8 @@ export default function Page() {
     const dataStr = "data:text/csv;charset=utf-8," + encodeURIComponent(posCsvContent);
     const downloadAnchor = document.createElement('a');
     downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", "boulevard_pos_menu_export.csv");
+    const dateStr = new Date().toISOString().slice(0, 10);
+    downloadAnchor.setAttribute("download", `restaurant_pos_menu_export_${dateStr}.csv`);
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
@@ -517,6 +519,11 @@ export default function Page() {
         )}
 
       </main>
+
+      {/* Footer mandated disclaimer */}
+      <footer className="w-full border-t border-[var(--color-border)] bg-white py-5 text-center text-xs text-[var(--color-muted)] font-mono">
+        All data in this tool is stored in your browser&apos;s localStorage. The page itself does not retain any user data.
+      </footer>
     </div>
   );
 }

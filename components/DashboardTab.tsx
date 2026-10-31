@@ -180,7 +180,7 @@ export default function DashboardTab({
           <TrendingUp className="text-[var(--color-accent)] mt-0.5 flex-shrink-0" size={18} />
           <div>
             <h4 className="font-heading text-sm font-bold text-[var(--color-primary)]">
-              Boulevard Specialty Pricing Strategy
+              Operational Specialty Pricing Strategy
             </h4>
             <p className="text-xs text-[var(--color-body-text)] mt-1 leading-relaxed">
               Our point-of-sale pricing model optimizes topping profitability by automating position and portion factors. By leveraging dynamic <strong>Exempt Rules</strong>, specialty menu items (such as the <em>Hawaiian Pizza</em> containing default ham and pineapples) automatically waive normal toppings fees but safely upsell <strong>Extra</strong> or <strong>Xxtra</strong> portions as the difference (e.g., Calculated Price = <code>raw_mod_price - normal_mod_price</code>). No redundant calculations occur in the POS backend.
