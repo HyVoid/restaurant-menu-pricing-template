@@ -1,564 +1,893 @@
-[ 🌐 عربي ](README.ar.md) | [ 🇩🇪 Deutsch ](README.de.md) | [ 🇫🇷 Français ](README.fr.md) | [ 🇳🇱 Nederlands ](README.nl.md) | [ 🇪🇸 Español ](README.sp.md) | [ 🇬🇧 English ](README.md)
 
-# Restaurant-Menu-Configuration-Modifier-Pricing-Toolkit
-## Excel Decision-Support Toolkit for Restaurant Menu Configuration, Modifier Pricing & POS Menu Governance
+# Restaurant Menu Master & Pricing Configuration Toolkit
 
-![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
-![Platform](https://img.shields.io/badge/Platform-Browser%20%2B%20Excel-success)
-![Tool](https://img.shields.io/badge/Tool-Menu%20Configuration%20%26%20Decision%20Support-orange)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+![Platform](https://img.shields.io/badge/Platform-Browser%20%2B%20Excel-2251FF)
+![Tool Type](https://img.shields.io/badge/Tool-Menu%20Management%20%26%20Pricing-051C2C)
+![Architecture](https://img.shields.io/badge/Architecture-No--VBA-success)
 
-**Build and maintain a single source of truth for restaurant menus, modifier pricing, and POS configuration—directly in a browser or Excel workbook, with no installation, no signup, and no manual pricing calculations.**
+**Manage restaurant menu data, reusable modifiers, complex pricing rules, and POS-ready exports through one structured configuration and price-validation toolkit — free in your browser, with an offline Excel version available.**
 
-**No signup. No installation. Free in your browser.**
-
-Try the browser version for free. If you need the Excel version, you can buy it with a 30-day, no-questions-asked money-back guarantee.
+> **Start with the free browser version.** No signup, installation, or spreadsheet expertise required.
 >
-> 🌐 **Open in Browser** → [Browser Version (HTML Live Demo)](https://hyvoid.github.io/Restaurant-Menu-Configuration-Modifier-Pricing-Toolkit/)
+> - 🌐 [Open in Browser](YOUR_HTML_DEMO_URL)
+> - 📥 [Get the Excel Version](YOUR_GUMROAD_OR_RELEASE_URL)
 >
-> 📥 **Download Excel**
->
-> Excel Workbook (Latest Release / [Website](https://www.theseusworkshop.com/))
-
----
+> The Excel version is designed for permanent records, repeat menu maintenance, and operational audit trails. Purchases are covered by a 30-day, no-questions-asked money-back guarantee.
 
 ## What It Helps You Track
 
-- Complete menu hierarchy across categories, products, sizes, and modifier groups from one consistent source.
-- Base prices, modifier prices, half-and-half pricing, and extra portion charges without conflicting pricing tables.
-- Default ingredients versus customer-added modifiers to prevent accidental overcharging.
-- Menu configurations that are ready for POS import instead of manually rebuilding pricing tables.
-- Missing prices, broken relationships, and configuration errors before menu updates reach customers.
-- End-to-end pricing validation using realistic order simulations instead of checking hundreds of individual menu combinations.
-
----
+- **Menu structure and product availability** — which categories, subcategories, menu items, and product sizes are currently configured and available for sale.
+- **Base prices and modifier charges** — how much each product and size costs, including additional charges for standard and premium toppings.
+- **Default included ingredients** — which ingredients are already included in specialty products, preventing customers from being charged twice for standard portions.
+- **Half-and-whole topping prices** — the correct charge for whole pizzas, left-half toppings, and right-half toppings.
+- **Ordering restrictions** — whether customers are selecting the required number of modifiers without exceeding group-level minimum and maximum limits.
+- **POS configuration readiness** — which menu items have complete pricing and configuration data, and which still need attention before synchronization.
 
 ## Quick Start Workflow
 
-1. **Configure restaurant pricing parameters once**
+The toolkit follows a simple maintenance cycle: configure the menu once, update individual records when changes occur, validate the results, and export the approved configuration.
 
-   Open the **System Parameters** sheet and define the operational rules that rarely change, such as half-pizza pricing factors, extra topping multipliers, tax rate, default currency, or other pricing policies. These values become the foundation for every subsequent calculation and can be adjusted centrally without editing formulas.
+1. **Set your restaurant's pricing parameters.** Define the currency symbol, applicable sales tax rate, whole-pizza and half-pizza pricing factors, premium modifier surcharge, and other operational thresholds in the dedicated Parameters sheet. These settings provide a consistent pricing baseline across the workbook.
 
-2. **Import or maintain existing menu data**
+2. **Enter your menu and modifier data.** Add categories, menu items, available sizes, modifier groups, ingredients, and their prices to the designated input tables. Existing menu information can be transferred from POS exports or other spreadsheets. Use the supplied IDs to establish relationships between records.
 
-   Populate the designated master sheets with existing menu information. Categories, menu items, sizes, toppings, modifier groups, and pricing can be copied directly from an existing spreadsheet or exported from a POS platform. No restructuring or manual recalculation is required because each sheet follows a dedicated business purpose.
+3. **Configure business rules and test customer prices.** Define which modifiers belong to each product, which ingredients are included by default, and how many selections customers can make. Use the order simulator to test different product sizes, topping quantities, and placement combinations. Review the calculated pre-tax and final customer prices.
 
-3. **Review results immediately**
+4. **Review configuration health and prepare POS changes.** Check the dashboard for incomplete records and pricing exceptions. Once the relevant records pass validation, use the automatically generated POS export table to prepare a standardized configuration update for the POS provider.
 
-   Switch to the Dashboard or Order Test worksheet to review automatically generated pricing, relationship validation, menu integrity checks, and complete customer order calculations. Changes made in the master data propagate throughout the workbook without rebuilding reports.
-
-4. **Refresh whenever the menu changes**
-
-   New menu items, seasonal promotions, pricing adjustments, or modifier updates only require changes to the relevant input tables. Existing calculations, validation logic, dashboards, and POS export structures continue working automatically without reconfiguration.
-
-**Set a few key parameters. Drop in existing menu data. Review the analysis. Refresh whenever the menu changes.**
-
----
+**Set the pricing rules once. Maintain the menu data. Test the customer price. Export only after validation.**
 
 ## Why I Built This
 
-Restaurant menu management appears straightforward until the menu grows beyond a handful of products.
+Restaurant menu configuration becomes surprisingly difficult when a product is no longer defined by a single name and price.
 
-A typical pizza restaurant may offer multiple sizes, dozens of toppings, specialty pizzas with default ingredients, half-and-half customization, premium modifiers, extra portions, and different pricing rules depending on where a topping is applied. Individually, each rule seems manageable. Together, they create hundreds—or even thousands—of possible pricing combinations.
+Consider a specialty pizza with a large base price, several included toppings, optional premium ingredients, and customer-selectable quantities. A conventional menu spreadsheet may record the product price and list its ingredients, but it does not necessarily distinguish between an ingredient already included in the selling price and an additional ingredient that should generate a surcharge.
 
-Many restaurants still maintain these relationships manually across separate spreadsheets, POS back offices, and online ordering platforms. Eventually those copies drift apart. Prices no longer match. Default ingredients are charged twice. Half-pizza pricing becomes inconsistent. Staff spend hours verifying individual combinations instead of improving the menu itself.
+That creates two different pricing risks.
 
-I built this workbook as a reusable operational framework rather than another pricing spreadsheet.
+First, customers can be charged twice for ingredients already included in a specialty product. Second, staff may apply inconsistent prices to extra toppings, different pizza sizes, or half-pizza selections.
 
-Instead of checking every possible menu combination manually, the workbook models the relationships behind the menu itself. Modifier rules, default ingredients, pricing logic, and validation become structured data rather than hidden assumptions.
+For example, a Hawaiian Pizza may already include ham and pineapple. Selecting normal quantities of those ingredients should not generate another charge. Selecting extra pineapple, however, may require an additional charge. A left-half topping should also be priced differently from a whole-pizza topping.
 
-For example, before using this framework, adding a premium topping to only half of a specialty pizza often required manually verifying whether the topping was already included by default and whether only the incremental charge should apply. After the pricing engine is configured once, the same scenario is calculated consistently every time using the underlying business rules rather than human memory.
+These are not isolated spreadsheet errors. They are failures to represent the actual commercial relationships behind a menu.
 
-The result is not simply faster maintenance—it is a repeatable decision-support system that reduces pricing mistakes before customers ever place an order.
+I built this toolkit to turn those relationships into a reusable, productized configuration and pricing framework. Instead of maintaining separate ingredient lists and manually checking every product, the same ingredient definitions, pricing rules, and selection constraints can be reused across the menu.
 
----
+The result is a more controlled workflow: maintain one source of truth, test the resulting customer price, identify configuration errors, and prepare a consistent POS change list.
 
-## Common Restaurant Menu Problems This Solves
+## Common Restaurant Menu Management Problems This Solves
 
 | Problem | Without This Tool | With This Tool |
-|----------|------------------|----------------|
-| Modifier prices become inconsistent across menu sizes | Multiple pricing tables gradually diverge, creating customer disputes and manual corrections. | Modifier pricing is generated from centralized pricing rules and shared parameters. |
-| Default ingredients are accidentally charged twice | Specialty pizzas require staff to remember which toppings are already included. | Default modifiers are recognized automatically so only valid incremental charges are applied. |
-| Menu updates require editing many worksheets | Every price change must be copied into multiple disconnected tables. | Core pricing is maintained once and flows automatically throughout dependent calculations. |
-| POS imports contain incomplete pricing relationships | Missing modifier mappings create errors after menu deployment. | Relationships are validated before export, reducing configuration failures. |
-| Manual testing misses pricing edge cases | Staff verify only a small sample of menu combinations due to time constraints. | The order simulation sheet reproduces realistic customer orders for comprehensive pricing validation. |
-| Configuration errors remain hidden until customers report them | Broken relationships are often discovered only after menus go live. | Dashboard validation highlights missing prices, orphaned modifiers, and incomplete menu structures before deployment. |
-
----
+|---|---|---|
+| **Menu data fragmentation** | Categories, products, sizes, and prices are maintained in disconnected tables, making updates difficult to coordinate. | A structured menu master separates categories, products, and size-specific prices while maintaining their relationships. |
+| **Duplicate modifier maintenance** | The same ingredient is recreated for multiple products, resulting in inconsistent names, prices, and availability. | Each modifier is defined once and reused through modifier groups and assignment relationships. |
+| **Incorrect specialty product pricing** | Included ingredients may be charged again when customers retain their standard quantities. | Default ingredient mappings distinguish included quantities from additional paid selections. |
+| **Inconsistent half-pizza pricing** | Staff manually calculate left-half and right-half topping charges, increasing the likelihood of inconsistent prices. | Centralized pricing factors generate half-portion prices from the whole-portion reference price. |
+| **Invalid customer selections** | Required ingredients, minimum selections, and maximum selections are not consistently enforced during menu configuration. | Modifier-group selection rules provide explicit minimum, maximum, and multiple-selection constraints. |
+| **POS configuration errors** | Incomplete product records and incorrect prices may be sent to the POS provider without a systematic review. | Automated validation, an order-price simulator, and a POS-ready export help identify problems before synchronization. |
 
 ## Who This Is For
 
-This workbook is designed for restaurant owners, menu administrators, franchise operators, POS implementation consultants, hospitality analysts, and operations teams responsible for maintaining complex restaurant menus with configurable products and modifier pricing.
+Designed for independent restaurants, pizza shops, quick-service restaurants, and multi-product food businesses that need to maintain structured menus with multiple sizes, reusable ingredients, conditional modifier pricing, and customer selection restrictions.
 
-It is particularly valuable for businesses that manage specialty pizzas, customizable meals, multiple product sizes, premium add-ons, and POS integrations where pricing consistency is critical.
+Particularly useful for:
 
-It is **not** intended to replace an enterprise POS platform or restaurant ERP system. Instead, it provides a structured decision-support layer for organizing menu logic, validating pricing rules, and preparing reliable menu data before deployment.
+- Restaurant owners maintaining their own menu and pricing configurations.
+- Operations managers responsible for menu updates and product consistency.
+- Menu administrators preparing product and modifier changes for POS providers.
+- Restaurant consultants organizing complex menu structures for clients.
 
-No spreadsheet expertise is required. Open the browser version for quick access or use the Excel workbook for full menu management and ongoing maintenance.
+**Who this is not designed for:** Restaurants looking for a complete POS system, payment processor, kitchen display system, inventory management platform, or automated ordering infrastructure. This toolkit focuses on menu master data, pricing configuration, rule validation, and POS preparation. It does not replace the operational POS platform.
 
----
+No spreadsheet expertise needed to get started. Open the free browser version and begin organizing menu information immediately.
 
 ## About
 
-I build lightweight Excel and browser-based decision-support tools for operational problems that become difficult once too many moving parts must be managed simultaneously.
+I build lightweight business tools that turn recurring operational problems into structured, reusable decision-support workflows.
 
-Rather than replacing existing business systems, these tools organize the information needed to make the next operational decision with confidence. **Restaurant Menu Master Workbook** is one example of that approach, turning complex menu relationships into a reusable framework that is easier to maintain, verify, and improve over time.
+Many small businesses already have the necessary information, but it is scattered across spreadsheets, system exports, and manually maintained records. The practical challenge is deciding what information needs to be connected, what rules must be consistent, and what should be checked before an operational decision is made.
+
+The Restaurant Menu Master & Pricing Configuration Toolkit is one example of this approach: a focused tool for maintaining menu relationships and testing pricing outcomes without introducing the complexity of a full enterprise system.
+
+
 ## Technical Details
 
 <details>
-<summary><strong>For technical reviewers, Excel practitioners, and collaborators</strong></summary>
+<summary>For technical reviewers, Excel practitioners, and developers — expand to inspect workbook architecture, pricing logic, formulas, and validation rules.</summary>
 
----
+### Workbook Architecture
 
-## Workbook Architecture
+The toolkit is designed as a relational menu configuration database and pricing-validation engine rather than a collection of independent menu spreadsheets.
 
-The workbook follows a layered architecture that separates master data, pricing logic, relationship management, validation, simulation, and export. Every worksheet has a single responsibility, allowing menu updates without rebuilding downstream calculations.
+Its architecture follows three principles:
 
-```text
-                 SYSTEM PARAMETERS
-                        │
-                        ▼
-             Sys_Params (Global Rules)
-                        │
-                        ▼
-──────────────────────────────────────────────
-        MASTER DATA (Single Source of Truth)
-──────────────────────────────────────────────
-Menu_Categories
-Menu_Subcategories
-Menu_Items
-Item_Sizes
-Modifier_Groups
-Modifiers
-                        │
-                        ▼
-──────────────────────────────────────────────
-      RELATIONSHIP & PRICING LAYER
-──────────────────────────────────────────────
-Modifier_Pricing
-Default_Modifiers
-Group_Assignment
-Selection_Rules
-                        │
-                        ▼
-──────────────────────────────────────────────
-      VALIDATION & CALCULATION
-──────────────────────────────────────────────
-Order_Test
-Dashboard
-                        │
-                        ▼
-──────────────────────────────────────────────
-             OUTPUT
-──────────────────────────────────────────────
-POS_Export
-```
+1. **Single Source of Truth:** Each category, product, size, modifier, and pricing rule has a designated master-data location.
+2. **Reusable Relationships:** Menu items inherit modifier groups through category-level or item-level assignments instead of duplicating configuration records.
+3. **Automated Validation and Output:** Dynamic formulas connect the master data, calculate customer prices, detect configuration errors, and generate standardized POS export records.
 
-| Layer | Worksheets | Purpose |
-|---------|------------|---------|
-| Global Parameters | Sys_Params | Central pricing multipliers, tax rates, currency and calculation constants |
-| Master Data | Categories, Subcategories, Items, Sizes, Modifier Groups, Modifiers | Maintain reusable menu entities |
-| Relationship Layer | Group Assignment, Default Modifiers, Selection Rules | Define how menu items interact with modifiers |
-| Pricing Layer | Modifier Pricing | Generate modifier prices automatically using centralized rules |
-| Validation Layer | Dashboard, Order Test | Detect configuration problems and validate pricing outcomes |
-| Output Layer | POS Export | Produce flattened structures suitable for POS import |
+The workbook contains five functional modules and 13 worksheets.
 
-### Data Flow
+#### 1. Global Parameters & Pricing Rules
 
-```
-Restaurant Menu
-        │
-        ▼
-Master Data Tables
-        │
-        ▼
-Relationship Validation
-        │
-        ▼
-Pricing Engine
-        │
-        ▼
-Order Simulation
-        │
-        ▼
-Integrity Validation
-        │
-        ▼
-POS Export
-```
+| Worksheet | Responsibility |
+|---|---|
+| `00_Param_Config` | Centralizes currency, tax rate, whole/half pricing factors, premium modifier surcharges, operational thresholds, status indicators, and conditional pricing rules. |
 
-Every calculation depends on structured master data rather than duplicated pricing tables, reducing maintenance effort and improving consistency.
+This worksheet is the global control layer. Pricing assumptions and business status identifiers are maintained centrally instead of being embedded as fixed values in individual calculation formulas.
 
----
+#### 2. Menu Product Master Data
 
-## Three Traps That Catch Even Experienced Restaurant Operators
+| Worksheet | Responsibility |
+|---|---|
+| `01_Menu_Categories` | Maintains menu categories, subcategories, display order, and category availability. |
+| `02_Menu_Items` | Stores individual product identities, descriptions, category relationships, product types, and availability. |
+| `03_Item_Sizes` | Stores size-specific product prices and connects each size to its parent menu item. |
 
-### Trap 1 — Charging Customers Twice for Default Ingredients
+The separation between product identity and size-specific pricing prevents the product master from expanding horizontally every time a new size or pricing option is introduced.
 
-A pricing decision is made for a specialty pizza.
+#### 3. Reusable Modifiers & Multi-Dimensional Pricing
 
-The operator assumes that adding Pepperoni should always generate a modifier charge.
+| Worksheet | Responsibility |
+|---|---|
+| `04_Modifier_Groups` | Defines customer-facing modifier groups and their operational scope. |
+| `05_Modifiers` | Maintains globally reusable ingredients and modifier identities. |
+| `06_Modifier_Pricing` | Stores modifier prices by product size and portion level, with whole/left/right placement calculations. |
 
-However, the selected pizza already includes Pepperoni as a default ingredient.
+The same ingredient can be reused across multiple products without creating separate copies of its master record.
 
-The result is an unnecessary extra charge that customers immediately notice.
+#### 4. Relationship Mapping & Selection Constraints
 
-| Incorrect Logic | Correct Logic |
-|-----------------|---------------|
-| Every selected modifier generates revenue. | Determine whether the modifier already belongs to the product's default recipe before charging. |
+| Worksheet | Responsibility |
+|---|---|
+| `07_Default_Modifiers` | Maps specialty products to their included ingredients and default quantities. |
+| `08_Group_Assignment` | Assigns modifier groups at either category level or individual product level. |
+| `09_Selection_Rules` | Controls minimum selections, maximum selections, required groups, and multiple-selection permissions. |
 
-Without identifying default ingredients, menu prices become inconsistent between specialty pizzas and build-your-own products.
+This module determines which modifier groups apply to each product and whether the resulting customer selection configuration is logically valid.
 
-The workbook first checks the **Default_Modifiers** relationship. If the topping is already included, only incremental upgrades such as **Extra** or **Double** portions generate additional revenue.
+#### 5. Order Simulation, POS Export & Monitoring
 
-The recommendation changes from:
+| Worksheet | Responsibility |
+|---|---|
+| `10_Order_Test` | Simulates customer selections and calculates final prices while checking selection-rule compliance. |
+| `11_POS_Export` | Generates a standardized list of available products, sizes, prices, modifier summaries, and synchronization status. |
+| `12_Dashboard` | Summarizes menu health, configuration anomalies, product availability, and POS readiness. |
+
+#### Data Flow
+
+The complete data flow follows this sequence:
 
 ```text
-Normal Pepperoni
-Charge: $2.49
+GLOBAL PARAMETERS
+00_Param_Config
+       |
+       v
+MENU MASTER DATA                 MODIFIER MASTER DATA
+01_Menu_Categories              04_Modifier_Groups
+       |                        05_Modifiers
+02_Menu_Items                   06_Modifier_Pricing
+       |                               |
+03_Item_Sizes                           |
+       |                                |
+       +---------------+----------------+
+                       |
+                       v
+             RELATIONSHIP & RULES
+             07_Default_Modifiers
+             08_Group_Assignment
+             09_Selection_Rules
+                       |
+          +------------+-------------+
+          |            |             |
+          v            v             v
+       10_Order     11_POS        12_Dashboard
+         Test       Export
+          |            |             |
+          v            v             v
+       Price QA    POS Update    Configuration
+                                  Monitoring
+````
+
+### Decision Framework
+
+The toolkit is built around four operational decisions.
+
+| Decision                                   | Information Required                                                                           | Decision Outcome                                                             |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| What can be sold?                          | Category, product, size, and availability records.                                             | Identifies the valid menu structure and available product configurations.    |
+| What should customers pay?                 | Base price, modifier pricing, included ingredients, portion quantities, placement, and tax.    | Determines the calculated customer price for a specific order configuration. |
+| What can customers select?                 | Modifier assignments, group membership, required status, and minimum/maximum selection limits. | Identifies valid and invalid ordering configurations.                        |
+| Is the menu ready for POS synchronization? | Master-data integrity, pricing completeness, modifier relationships, and validation status.    | Separates records ready for export from records requiring correction.        |
+
+The framework distinguishes three different types of information:
+
+- Product facts: What the restaurant sells and which sizes are available.
+- Commercial rules: How ingredients, quantities, and placement affect the selling price.
+- Operational constraints: Which selections are permitted and whether the configuration is ready for deployment.
+
+This separation prevents a product description, a pricing assumption, and an ordering restriction from being treated as interchangeable data.
+
+### Three Common Pricing & Configuration Traps
+
+#### Trap 1 — Charging Twice for Ingredients Already Included
+
+The decision: Set a specialty pizza's customer price based on its listed ingredients.
+
+The unnoticed flaw: A conventional modifier calculation adds the standard topping price regardless of whether that topping is already included in the specialty product.
+
+Consider a Hawaiian Pizza with ham and pineapple included in its base price.
+
+| Customer Selection | Incorrect Treatment                                         | Correct Treatment                                  |
+| ------------------ | ----------------------------------------------------------- | -------------------------------------------------- |
+| Normal ham         | Adds a topping charge                                       | No additional charge                               |
+| Light pineapple    | Adds a topping charge                                       | No additional charge                               |
+| Extra ham          | Adds a topping charge without considering inclusion         | Applies the configured extra-quantity pricing rule |
+| Extra pineapple    | Uses the standard modifier price without checking inclusion | Applies the configured extra-quantity pricing rule |
+
+The incorrect approach treats every selected ingredient as a new purchase. The corrected approach recognizes that an ingredient may already be part of the product's commercial definition.
+
+The `07_Default_Modifiers` mapping identifies included ingredients. The conditional pricing rules then determine the applicable multiplier based on inclusion status and selected portion type.
+
+#### Trap 2 — Treating Half-Pizza Toppings as Independent Fixed Prices
+
+The decision: Charge the same modifier price regardless of whether a topping covers the entire pizza or only one half.
+
+The unnoticed flaw: The amount of product receiving the topping changes, but the pricing calculation does not reflect the selected placement.
+
+For example, assume a whole-pizza topping costs $2.00.
+
+| Placement | Incorrect Price | Correct Price |
+| --------- | --------------- | ------------- |
+| Whole     | $2.00           | $2.00         |
+| Left      | $2.00           | $1.00         |
+| Right     | $2.00           | $1.00         |
+
+The incorrect approach overcharges half-pizza selections when the restaurant's policy is proportional pricing.
+
+The corrected approach derives left- and right-half prices from the whole-price reference using centralized pricing factors.
+
+#### Trap 3 — Treating POS Menu Readiness as a Data Entry Task
+
+The decision: Send the latest menu spreadsheet to the POS provider after updating product prices.
+
+The unnoticed flaw: A completed price entry does not establish that the entire product configuration is valid.
+
+A product may have a base price but still contain:
+
+- A missing size record.
+- An invalid category relationship.
+- An unavailable modifier group.
+- Missing default ingredient mappings.
+- Inconsistent minimum and maximum selection rules.
+
+| Review Approach                           | Risk                                             | Corrected Approach                                         |
+| ----------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------- |
+| Check whether the product name exists.    | Incomplete products appear ready.                | Validate product identity and category relationships.      |
+| Check whether a base price exists.        | Some available sizes remain unpriced.            | Validate each configured product-size combination.         |
+| Check whether modifier groups are listed. | Invalid or empty groups may reach the POS.       | Validate group membership and selection constraints.       |
+| Export the entire menu.                   | Errors are transferred to the POS configuration. | Export eligible records and review synchronization status. |
+
+The corrected approach distinguishes data entry completion from operational readiness.
+
+### Example Scenario
+
+Scenario: Testing a Large Hawaiian Pizza with Extra Pineapple on the Left Half
+
+A restaurant wants to confirm that its specialty pizza pricing remains correct when customers change the quantity and placement of included ingredients.
+
+Assume the following illustrative configuration:
+
+| Input                | Value          |
+| -------------------- | -------------- |
+| Product              | Hawaiian Pizza |
+| Size                 | Large          |
+| Base Price           | $18.00         |
+| Included Ingredients | Ham, Pineapple |
+| Selected Modifier    | Pineapple      |
+| Selected Quantity    | Extra          |
+| Placement            | Left           |
+| Whole Modifier Price | $2.00          |
+| Left Half Factor     | 0.50           |
+| Sales Tax            | 8.00%          |
+
+Step 1 — Identify the included ingredient.
+
+Pineapple is mapped as an included ingredient for Hawaiian Pizza. The customer is therefore not charged for the standard included quantity again.
+
+Step 2 — Determine the applicable quantity multiplier.
+
+The customer selects Extra rather than Normal. Under the illustrative rule matrix, an included ingredient selected as Extra receives a multiplier of 1.00.
+
+Step 3 — Calculate the placement-adjusted modifier price.
+
+```
+Whole Modifier Price = $2.00
+
+Left Half Price = $2.00 × 0.50
+
+Raw Portion Price = $1.00
+
+Applicable Multiplier = 1.00
+
+Additional Charge = $1.00 × 1.00
+
+Additional Charge = $1.00
 ```
 
-to
+Step 4 — Calculate the customer price.
 
-```text
-Normal Pepperoni
-Already Included
-Charge: $0.00
-```
+| Calculation                 | Amount |
+| --------------------------- | ------ |
+| Large Hawaiian Pizza        | $18.00 |
+| Extra Pineapple — Left Half | $1.00  |
+| Pre-Tax Total               | $19.00 |
+| Sales Tax (8%)              | $1.52  |
+| Final Customer Price        | $20.52 |
 
-<details>
-<summary>Formula Logic</summary>
+Analytical interpretation
 
-```excel
-IF(
- Is_Default="Y",
- IF(
-   Portion="Normal",
-   0,
-   ExtraPrice-NormalPrice
- ),
- FullModifierPrice
-)
-```
+A conventional topping calculator might charge the standard pineapple price again, even when the ingredient is already included. Alternatively, a calculator that ignores placement might charge the full $2.00 for a half-pizza selection.
 
-</details>
+The correct result reflects both commercial conditions: the included ingredient status and the selected placement.
 
----
+Decision implication: The restaurant can validate the customer-facing price before changing its live menu, reducing the risk of inconsistent charges and avoidable POS corrections.
 
-### Trap 2 — Half Pizza Pricing Becomes Inconsistent
+This scenario illustrates the configured pricing logic. Actual results depend on the restaurant's own pricing matrix, modifier prices, and tax settings.
 
-The restaurant introduces left-half and right-half toppings.
+````
 
-Staff manually estimate that "half" should be approximately half price.
+```markdown
+### Formula Reference
 
-Months later different modifiers are using different assumptions.
+The workbook uses native Excel dynamic-array functions to maintain relationships between menu records, calculate prices, and generate validation outputs.
 
-Some charge 50%.
-
-Some charge 60%.
-
-Others were forgotten entirely.
-
-Pricing becomes inconsistent across identical products.
-
-| Incorrect Logic | Correct Logic |
-|-----------------|---------------|
-| Store half-prices separately. | Calculate half pricing from one global parameter. |
-
-The workbook stores only the full modifier price.
-
-Half pricing is generated automatically using a centralized multiplier.
-
-Updating one parameter immediately updates every affected modifier.
-
-Example:
-
-```text
-Whole Pepperoni
-$2.40
-```
-
-becomes
-
-```text
-Half Pricing Factor
-0.50
-
-Left Half
-$1.20
-
-Right Half
-$1.20
-```
-
-instead of manually maintaining hundreds of duplicate values.
-
-<details>
-<summary>Formula Logic</summary>
-
-```excel
-Final Price =
-Base Price *
-Half Factor *
-Portion Multiplier
-```
-
-</details>
-
----
-
-### Trap 3 — Menu Updates Break POS Imports
-
-A restaurant launches several seasonal menu items.
-
-New modifiers are added.
-
-One modifier group is forgotten during mapping.
-
-The menu appears complete inside Excel but fails after importing into the POS system.
-
-The underlying problem is not pricing.
-
-It is relationship integrity.
-
-| Incorrect Logic | Correct Logic |
-|-----------------|---------------|
-| Verify prices only. | Verify both prices and relationships before export. |
-
-The workbook validates:
-
-- orphaned modifier groups
-- missing item sizes
-- incomplete category mappings
-- missing pricing rules
-- invalid modifier references
-
-The dashboard exposes these issues before export instead of after deployment.
-
-<details>
-<summary>Formula Logic</summary>
-
-```excel
-FILTER(
- MissingItems,
- ISNA(
-   MATCH(...)
- )
-)
-```
-
-</details>
-
----
-
-## Example Scenario
-
-A pizza restaurant introduces a new **BBQ Chicken Pizza** available in Small, Medium, and Large sizes.
-
-The product includes:
-
-- BBQ Sauce
-- Chicken
-- Mozzarella
-- Red Onion
-
-A customer places the following order:
-
-| Item | Selection |
-|------|-----------|
-| Product | BBQ Chicken Pizza |
-| Size | Large |
-| Default Chicken | Keep |
-| Pepperoni | Add Extra |
-| Mushroom | Left Half |
-| BBQ Sauce | Normal |
-
-The pricing engine performs the following sequence.
-
-1. Retrieve the Large pizza base price.
-2. Identify Chicken and BBQ Sauce as default ingredients.
-3. Apply no charge for unchanged defaults.
-4. Retrieve the modifier price for Pepperoni.
-5. Apply the Extra multiplier.
-6. Retrieve Mushroom pricing.
-7. Apply the half-pizza multiplier.
-8. Sum every component into the final order price.
-
-Example calculation:
-
-| Component | Amount |
-|-----------|--------|
-| Large Pizza | $18.99 |
-| Pepperoni (Extra) | $5.24 |
-| Mushroom (Left Half) | $0.88 |
-| Default Ingredients | $0.00 |
-| **Total** | **$25.11** |
-
-Operationally, the restaurant no longer depends on staff remembering pricing exceptions.
-
-Every customer order follows identical pricing logic regardless of who maintains the menu.
-
----
-
-## Formula Reference
-
-<details>
-<summary>Master Data Lookups</summary>
+Core functions include:
 
 | Function | Purpose |
-|----------|---------|
-| XLOOKUP | Retrieve item names, categories, modifier names, and base prices |
-| MATCH | Validate relationship existence |
-| IFERROR | Return safe defaults when references are missing |
+|---|---|
+| `LET` | Names intermediate calculations and keeps complex formulas readable. |
+| `FILTER` | Extracts valid records and dynamically generates output lists. |
+| `XLOOKUP` | Retrieves related product, category, modifier, and pricing information. |
+| `COUNTIF` / `COUNTIFS` | Counts records and checks selection or configuration conditions. |
+| `UNIQUE` | Generates distinct category and product identifiers. |
+| `SUM` / `SUMIFS` | Aggregates modifier charges and business values. |
+| `IF` / `AND` / `OR` | Applies pricing conditions and validation rules. |
+| `ROUND` | Controls monetary calculation precision. |
+| `AVERAGEIFS` | Calculates category-level average starting prices. |
 
-Example:
+#### 1. Global Parameters — `00_Param_Config`
+
+The parameter sheet maintains two types of controls:
+
+**Static configuration parameters**
+
+| Parameter | Reference | Purpose |
+|---|---|---|
+| Currency Symbol | `B3` | Controls monetary presentation. |
+| Sales Tax Rate | `B4` | Calculates final customer prices. |
+| Left Half Factor | `B5` | Calculates left-half modifier prices. |
+| Right Half Factor | `B6` | Calculates right-half modifier prices. |
+| Whole Factor | `B7` | Controls whole-portion pricing. |
+| Premium Modifier Surcharge | `B8` | Provides the configured premium pricing adjustment. |
+| Modifier Group Warning Threshold | `B9` | Flags excessive modifier-group assignments. |
+| High Price Warning Threshold | `B10` | Identifies unusually high product prices. |
+| POS Export Availability Baseline | `B11` | Defines the status used for POS export filtering. |
+| Default Active Status | `B12` | Centralizes the active-status identifier. |
+| Included Status | `B13` | Identifies default included ingredients. |
+| Standard Modifier Tier | `B14` | Identifies the standard modifier tier. |
+
+**Conditional pricing matrix**
+
+The `E3:J10` area maintains the conditional pricing rules.
+
+Its logic combines:
+
+- Included Status Condition
+- Selection Type Condition
+- Pricing Multiplier Result
+
+A composite lookup key is generated to connect the conditions with the pricing multiplier.
+
+This prevents the same pricing assumptions from being independently embedded in multiple worksheets.
+
+#### 2. Menu Master Data — `01_Menu_Categories`, `02_Menu_Items`, `03_Item_Sizes`
+
+**Category hierarchy**
+
+`01_Menu_Categories!H3` generates category paths:
 
 ```excel
+=LET(
+    cat_name, FILTER(B3:B100, E3:E100<>""),
+    sub_name, FILTER(F3:F100, E3:E100<>""),
+    cat_name & " > " & sub_name
+)
+````
+
+The resulting paths provide readable category relationships, such as:
+
+```
+Pizza > Create Your Own
+Pizza > Gourmet Pizza
+Subs > Hot Subs
+```
+
+Active product count by subcategory
+
+`01_Menu_Categories!I3`:
+
+```
+=LET(
+    sub_ids, FILTER(E3:E100, E3:E100<>""),
+    COUNTIFS(
+        '02_Menu_Items'!D3:D500, sub_ids,
+        '02_Menu_Items'!G3:G500, '00_Param_Config'!$B$12
+    )
+)
+```
+
+Category configuration status
+
+`01_Menu_Categories!J3`:
+
+```
+=LET(
+    cat_active, FILTER(D3:D100, E3:E100<>""),
+    item_cnt, I3#,
+    IF(cat_active <> '00_Param_Config'!$B$12, "⏸️ 已停用",
+        IF(item_cnt = 0, "⚠️ 空分类预警", "✅ 正常")
+    )
+)
+```
+
+Product-size composite key
+
+`03_Item_Sizes` generates a composite key using:
+
+```
+=Item_ID & "|" & Size_ID
+```
+
+For example:
+
+```
+ITM001|SZ_SM
+ITM001|SZ_LG
+```
+
+This key allows the workbook to distinguish between multiple sizes belonging to the same product.
+
+Product-size price validation
+
+The price validation layer checks whether a configured size price is missing, invalid, or exceeds the centralized warning threshold.
+
+The resulting status is used by both the product master and POS export process.
+
+#### 3. Modifier Master Data & Pricing — `04_Modifier_Groups`, `05_Modifiers`, `06_Modifier_Pricing`
+
+Active modifier count
+
+`04_Modifier_Groups!F3`:
+
+```
+=LET(
+    grp_ids, FILTER(A3:A100, A3:A100<>""),
+    COUNTIFS(
+        '05_Modifiers'!B3:B500, grp_ids,
+        '05_Modifiers'!E3:E500, '00_Param_Config'!$B$12
+    )
+)
+```
+
+Modifier group selection-rule lookup
+
+`04_Modifier_Groups!G3`:
+
+```
+=LET(
+    grp_ids, FILTER(A3:A100, A3:A100<>""),
+    XLOOKUP(
+        grp_ids,
+        '09_Selection_Rules'!A3:A100,
+        '09_Selection_Rules'!B3:B100,
+        -1
+    )
+)
+```
+
+The corresponding maximum-selection lookup uses column C in `09_Selection_Rules`.
+
+A return value of `-1` identifies a missing rule.
+
+Modifier pricing dimensions
+
+`06_Modifier_Pricing` maintains the relationship between:
+
+```
+Modifier ID
+    +
+Size ID
+    +
+Selection Type
+```
+
+The composite pricing key supports the retrieval of the correct modifier price for a selected product size and quantity level.
+
+Whole, left, and right prices are derived from the centralized pricing factors.
+
+The pricing architecture separates the reference price from the placement calculation, allowing restaurant-specific pricing policies to be adjusted without rewriting the order simulator.
+
+#### 4. Default Ingredients & Relationship Mapping — `07_Default_Modifiers`, `08_Group_Assignment`, `09_Selection_Rules`
+
+Default modifier lookup key
+
+`07_Default_Modifiers!E3`:
+
+```
+=LET(
+    itm_ids, FILTER(A3:A1000, A3:A1000<>""),
+    mod_ids, FILTER(B3:B1000, A3:A1000<>""),
+    itm_ids & "|" & mod_ids
+)
+```
+
+Product name reference
+
+`07_Default_Modifiers!F3`:
+
+```
+=LET(
+    itm_ids, FILTER(A3:A1000, A3:A1000<>""),
+    XLOOKUP(
+        itm_ids,
+        '02_Menu_Items'!A3:A500,
+        '02_Menu_Items'!B3:B500,
+        "❌ 商品ID无效"
+    )
+)
+```
+
+Modifier name reference
+
+`07_Default_Modifiers!G3`:
+
+```
+=LET(
+    mod_ids, FILTER(B3:B1000, A3:A1000<>""),
+    XLOOKUP(
+        mod_ids,
+        '05_Modifiers'!A3:A500,
+        '05_Modifiers'!C3:C500,
+        "❌ 配料ID无效"
+    )
+)
+```
+
+Default configuration validation
+
+`07_Default_Modifiers!H3` checks:
+
+- Whether the product ID exists.
+- Whether the modifier ID exists.
+- Whether the same product-modifier combination is duplicated.
+- Whether the included status is correctly configured.
+
+Category-level and item-level assignments
+
+`08_Group_Assignment` uses the `Level` field to distinguish assignment scope:
+
+```
+Level = Category
+    Category ID = valid category
+    Item ID = -
+
+Level = Item
+    Item ID = valid product
+    Category ID = -
+```
+
+The assignment validation layer checks the effective scope and identifies invalid or excessive assignments.
+
+Selection rules
+
+`09_Selection_Rules` uses group-level rules to determine:
+
+- Minimum selections.
+- Maximum selections.
+- Required status.
+- Whether multiple selections are permitted.
+
+These values are referenced by the order simulator and modifier group validation formulas.
+
+#### 5. Customer Price Simulation — `10_Order_Test`
+
+This worksheet combines the product's base price with the actual modifier charges generated by the selected order configuration.
+
+Selected product name
+
+`E3`:
+
+```
 =XLOOKUP(
- Item_ID,
- tbl_Items[Item_ID],
- tbl_Items[Item_Name]
+    B3,
+    '02_Menu_Items'!A3:A500,
+    '02_Menu_Items'!B3:B500 & " (" &
+    '02_Menu_Items'!F3:F500 & ")",
+    "⚠️ 请选择有效商品ID"
 )
 ```
 
-</details>
+Base size price
 
-<details>
-<summary>Pricing Engine</summary>
+`E4`:
 
-| Function | Purpose |
-|----------|---------|
-| SWITCH | Select size-specific prices |
-| LET | Simplify complex pricing logic |
-| IF | Apply pricing conditions |
-| XLOOKUP | Retrieve pricing records |
-
-Example:
-
-```excel
-LET(
- BasePrice,
- PositionFactor,
- PortionFactor,
- FinalPrice
+```
+=XLOOKUP(
+    B3 & "|" & B4,
+    '03_Item_Sizes'!F3#,
+    '03_Item_Sizes'!D3:D1000,
+    0
 )
 ```
 
-</details>
+Total modifier upcharge
 
-<details>
-<summary>Validation & Dashboard</summary>
+`E5`:
 
-| Function | Purpose |
-|----------|---------|
-| FILTER | Display incomplete records |
-| COUNTA | KPI totals |
-| ROWS | Count generated pricing rules |
-| MATCH | Relationship validation |
+```
+=SUM(J10#)
+```
 
-Example:
+Pre-tax customer price
 
-```excel
-FILTER(
- tbl_Items[Item_Name],
- ISNA(MATCH(...))
+`E6`:
+
+```
+=E4+E5
+```
+
+Final customer price including tax
+
+`E7`:
+
+```
+=ROUND(
+    E6 * (1 + '00_Param_Config'!$B$4),
+    2
 )
 ```
 
+The modifier detail calculations use the following sequence:
+
+```
+Selected Modifier ID
+        |
+        v
+Modifier Master Lookup
+        |
+        v
+Default Ingredient Recognition
+        |
+        v
+Conditional Pricing Rule Lookup
+        |
+        v
+Size & Portion Price Retrieval
+        |
+        v
+Placement Adjustment
+        |
+        v
+Calculated Line Price
+        |
+        v
+Group Selection Validation
+```
+
+The final price is calculated from the actual simulated selection rather than from a manually assembled quotation.
+
+#### 6. POS Export — `11_POS_Export`
+
+The POS export worksheet dynamically filters products based on their configured availability.
+
+Available product filtering
+
+`A3`:
+
+```
+=LET(
+    sz_itm_ids,
+    FILTER(
+        '03_Item_Sizes'!A3:A1000,
+        '03_Item_Sizes'!A3:A1000<>""
+    ),
+    itm_avail,
+    XLOOKUP(
+        sz_itm_ids,
+        '02_Menu_Items'!A3:A500,
+        '02_Menu_Items'!G3:G500,
+        "No"
+    ),
+    FILTER(
+        sz_itm_ids,
+        itm_avail = '00_Param_Config'!$B$11
+    )
+)
+```
+
+Export product name
+
+`B3`:
+
+```
+=XLOOKUP(
+    A3#,
+    '02_Menu_Items'!A3:A500,
+    '02_Menu_Items'!B3:B500,
+    ""
+)
+```
+
+Export size name
+
+`D3`:
+
+```
+=XLOOKUP(
+    A3# & "|" & C3#,
+    '03_Item_Sizes'!F3#,
+    FILTER(
+        '03_Item_Sizes'!C3:C1000,
+        '03_Item_Sizes'!A3:A1000<>""
+    ),
+    ""
+)
+```
+
+Export base price
+
+`E3`:
+
+```
+=XLOOKUP(
+    A3# & "|" & C3#,
+    '03_Item_Sizes'!F3#,
+    FILTER(
+        '03_Item_Sizes'!D3:D1000,
+        '03_Item_Sizes'!A3:A1000<>""
+    ),
+    0
+)
+```
+
+POS synchronization status
+
+The export validation combines product integrity and size-price validation.
+
+The intended output is:
+
+```
+READY_FOR_POS
+HOLD_CHECK_ERROR
+```
+
+The export is designed to make product configuration changes easier to review and transfer. It is not a direct POS API integration or automatic synchronization service.
+
+#### 7. Dashboard & Configuration Monitoring — `12_Dashboard`
+
+The dashboard combines six operational indicators:
+
+| KPI                       | Calculation Purpose                           |
+| ------------------------- | --------------------------------------------- |
+| Total Active Categories   | Counts enabled menu categories.               |
+| Total Available Items     | Counts available products.                    |
+| Total Reusable Modifiers  | Counts enabled modifiers.                     |
+| Total Pricing Rules Count | Counts configured pricing rules.              |
+| Total Config Anomalies    | Aggregates detected configuration exceptions. |
+| POS Ready Item Count      | Counts records marked ready for export.       |
+
+Total available items
+
+`C4`:
+
+```
+=COUNTIF(
+    '02_Menu_Items'!G3:G500,
+    '00_Param_Config'!$B$12
+)
+```
+
+Total configuration anomalies
+
+`F4`:
+
+```
+=COUNTIF('02_Menu_Items'!M3#, "❌*")
++ COUNTIF('03_Item_Sizes'!I3#, "❌*")
++ COUNTIF('04_Modifier_Groups'!I3#, "❌*")
++ COUNTIF('08_Group_Assignment'!I3#, "⚠️*")
++ COUNTIF('09_Selection_Rules'!H3#, "❌*")
+```
+
+POS-ready record count
+
+`G4`:
+
+```
+=COUNTIF(
+    '11_POS_Export'!I3#,
+    "READY_FOR_POS"
+)
+```
+
+The dashboard provides a consolidated view of menu configuration health, while the underlying worksheets retain the detailed records needed to investigate and correct individual exceptions.
+
+### Validation Rules
+
+The validation framework is designed to identify errors before they affect customer-facing prices or POS configuration.
+
+| Field / Area                | Validation Rule                                                              | Error Behavior                                                      |
+| --------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Category ID                 | Must be unique and reference a valid category.                               | Invalid category relationships are flagged.                         |
+| Subcategory ID              | Must correspond to an existing subcategory.                                  | Invalid product classification is identified.                       |
+| Category Active             | Must use the configured Yes/No status values.                                | Invalid status values affect category validation.                   |
+| Item ID                     | Must be a unique product identifier.                                         | Invalid or duplicate product identities require correction.         |
+| Item Category               | Must reference a valid category and subcategory.                             | Product integrity validation identifies inconsistent relationships. |
+| Item Availability           | Must use the configured active-status identifier.                            | Invalid availability can prevent correct filtering.                 |
+| Item Size                   | Must reference a valid product and size combination.                         | Missing or invalid product-size records are flagged.                |
+| Base Price                  | Must be present and satisfy the configured pricing checks.                   | Missing or anomalous prices prevent POS readiness.                  |
+| Modifier Group ID           | Must be a unique group identifier.                                           | Invalid relationships are flagged.                                  |
+| Modifier ID                 | Must be unique and reference a valid modifier group.                         | Modifier lookup errors are identified.                              |
+| Modifier Active             | Must use the configured active-status identifier.                            | Inactive modifiers are excluded from active modifier counts.        |
+| Modifier Pricing            | Must contain the required size and selection-type pricing records.           | Incomplete pricing matrices require correction.                     |
+| Modifier Tier               | Must correspond to the configured modifier-tier identifiers.                 | Invalid tier classification affects pricing validation.             |
+| Default Modifier Mapping    | Product and modifier IDs must exist.                                         | Invalid IDs are flagged.                                            |
+| Default Modifier Uniqueness | The same product-modifier combination must not be duplicated.                | Duplicate mappings are flagged.                                     |
+| Included Status             | Must match the configured included-status identifier where applicable.       | Incorrect default inclusion configuration is flagged.               |
+| Assignment Level            | Must be either `Category` or `Item`.                                         | Invalid assignment scope is flagged.                                |
+| Category-Level Assignment   | Requires a valid Category ID and the prescribed Item ID placeholder.         | Invalid scope configuration is flagged.                             |
+| Item-Level Assignment       | Requires a valid Item ID and the prescribed Category ID placeholder.         | Invalid scope configuration is flagged.                             |
+| Modifier Group Assignment   | Must reference an existing modifier group.                                   | Invalid group relationships are flagged.                            |
+| Modifier Group Capacity     | Maximum selection count must not exceed the available active modifier count. | Selection configuration requires correction.                        |
+| Required Modifier Group     | Required groups must have a minimum selection greater than zero.             | Logical conflict is flagged.                                        |
+| Optional Modifier Group     | Optional groups should have a minimum selection of zero.                     | Inconsistent selection rules are flagged.                           |
+| Multiple Selection          | Must follow the configured multiple-selection permission.                    | Invalid selection configurations require review.                    |
+| Customer Test Product       | Must reference a valid product.                                              | Invalid product selection displays a warning.                       |
+| Customer Test Size          | Must reference a valid size for the selected product.                        | Missing size-price lookup returns an invalid or zero-price result.  |
+| Customer Modifier Selection | Must reference an available modifier.                                        | Invalid modifier references require correction.                     |
+| Customer Portion Type       | Must use `Light`, `Normal`, `Extra`, or `Xxtra`.                             | Invalid selection values are not valid pricing inputs.              |
+| Customer Placement          | Must use `Whole`, `Left`, or `Right`.                                        | Invalid placement values are not valid pricing inputs.              |
+| Conditional Pricing         | Must resolve to the configured inclusion and quantity rule.                  | Incorrect or missing pricing configuration requires investigation.  |
+| Customer Price              | Must reflect the base price, modifier charges, and configured tax rate.      | The order simulator exposes the resulting calculation for review.   |
+| POS Export                  | Product and size-price validation must pass.                                 | `HOLD_CHECK_ERROR` replaces `READY_FOR_POS`.                        |
+
+Important operational distinction: The validation layer checks the configured relationships and business rules represented in the workbook. It does not independently verify whether a POS provider accepts every exported field or supports every pricing behavior.
+
 </details>
 
----
+## The Business Logic & Methodology
 
-## Validation Rules
+Restaurant menu pricing is not simply a matter of adding ingredient prices to product prices. It requires understanding which ingredients are already included, which selections create additional charges, how portion sizes affect those charges, and which combinations customers are permitted to order.
 
-| Field | Validation Rule | Error Behavior |
-|-------|-----------------|----------------|
-| Category_ID | Must exist in Category table | Category rejected |
-| Subcategory_ID | Must reference existing category | Relationship warning |
-| Item_ID | Unique identifier | Duplicate warning |
-| SKU_ID | Unique item-size combination | Duplicate prevented |
-| Modifier_ID | Must exist before pricing rules | Pricing unavailable |
-| Modifier Group | Must exist before assignment | Dashboard alert |
-| Portion Level | Normal, Light, Extra, Xxtra only | Invalid selection |
-| Position | Whole, Left, Right only | Invalid pricing rule |
-| Half Pricing Factor | Positive decimal | Global pricing error |
-| Extra Multiplier | Greater than zero | Modifier pricing error |
-| Default Modifier | Must reference valid Item and Modifier | Duplicate charging prevented |
-| POS Export | All mandatory mappings complete | Export validation failure |
+This toolkit applies several practical business methods to make those commercial relationships explicit.
 
-The workbook intentionally validates relationships before calculations wherever possible. Missing references are surfaced through dashboard alerts instead of allowing silent calculation failures.
+- Relational master-data management: Separates products, sizes, ingredients, and modifier groups into reusable records. This prevents duplicate maintenance and makes menu-wide changes more consistent.
+- Conditional pricing: Distinguishes included ingredients from additional purchases and applies different charges according to the selected quantity. This prevents double charging while preserving revenue from genuine upgrades.
+- Proportional portion pricing: Uses whole-product prices as the reference for half-product selections. This creates consistent pricing for left-half, right-half, and whole-pizza toppings without maintaining unrelated prices for each placement.
+- Constraint-based configuration: Defines the minimum and maximum number of permitted selections for each modifier group. This helps prevent impossible ordering configurations and reduces manual correction by restaurant staff.
+- Pre-deployment quality assurance: Tests representative customer orders, checks configuration exceptions, and separates POS-ready records from incomplete ones. This reduces the chance of transferring incorrect prices or incomplete product relationships into the live ordering environment.
 
-</details>
-
-
----
+The central commercial objective is straightforward: make the menu's actual pricing and ordering logic consistent before it reaches the customer or the POS system.
 
 ## Other Tools in This Series
 
-These tools follow the same philosophy: lightweight, reusable decision-support frameworks built for recurring operational problems—not replacements for ERP or enterprise platforms.
+More lightweight business decision-support tools and operational workbooks:
 
-- **[project-time-tracking-excel-template](https://github.com/HyVoid/project-time-tracking-excel-template)** — Which projects are drifting on time cost or margin? — Analyze project labor cost allocation and profitability across active project portfolios.
-- **[Caf-audit-tool-for-efficient-reviews](https://github.com/HyVoid/Caf-audit-tool-for-efficient-reviews)** — Which operational dimension is costing the most revenue and does the financial leakage demand immediate intervention? — Convert structured cafe observations into a weighted diagnostic score financial leakage estimate and prioritized corrective action list.
-- **[wedding-planner](https://github.com/HyVoid/wedding-planner)** — Which wedding planning tasks costs and timelines need coordination? — Coordinate vendor management task tracking and budget control across wedding planning workflows.
-- **[manufacturing-capacity-planning-template](https://github.com/HyVoid/manufacturing-capacity-planning-template)** — Is labor capacity being utilized efficiently or does the operation need different staffing or scheduling? — Transform production plans and labor data into capacity utilization labor cost allocation and staffing decisions.
-- **[cin7-excel-reporting-template](https://github.com/HyVoid/cin7-excel-reporting-template)** — What does Cin7 operating data say about business performance? — Translate Cin7 inventory and operations data into actionable business performance insights.
-- **[employee-performance-dashboard-excel](https://github.com/HyVoid/employee-performance-dashboard-excel)** — Which employees and projects are at risk of delivery failure and where should management intervene before deadlines pass? — Connect annual work planning execution tracking weighted performance evaluation and management reporting into one continuous operational workflow.
-- **[rental-property-management-excel-template](https://github.com/HyVoid/rental-property-management-excel-template)** — Which units are losing revenue through undetected vacancy and which turnovers need immediate action? — Transform booking records into live occupancy status vacancy intelligence and operational alerts across an entire rental portfolio.
-- **[workforce-planning-payroll-excel-dashboard](https://github.com/HyVoid/workforce-planning-payroll-excel-dashboard)** — Is the organization burning through annual workforce capacity faster than planned and which departments need intervention before overtime costs spiral? — Consolidate payroll spending annual contracted hours overtime ratios and workforce utilization into one cross-department capacity planning framework.
-- **[warehouse-billing-excel-template](https://github.com/HyVoid/warehouse-billing-excel-template)** — Are warehouse billing charges accurate and traceable to underlying operational records? — Calculate warehouse storage, handling, and transport charges into auditable customer billing statements.
-- **[commercial-hvac-plumbing-bid-estimator](https://github.com/HyVoid/commercial-hvac-plumbing-bid-estimator)** — What is a defensible, auditable bid price for this commercial MEP project? — Estimate and track commercial MEP project costs from takeoff to final bid submission.
-- **[landed-cost-calculator-excel](https://github.com/HyVoid/landed-cost-calculator-excel)** — Why does the SKU-level landed cost from my ERP differ from the freight forwarder's API, and which allocation method is causing the margin erosion? — Reconcile and benchmark landed cost calculations against a practitioner template to trace SKU-level cost allocation differences to their underlying accounting logic.
-- **[hoa-budget-accounting-spreadsheet](https://github.com/HyVoid/hoa-budget-accounting-spreadsheet)** — Are our HOA funds being allocated correctly and are we on track with our budget? — Categorize transactions and generate budget variance reports for HOA financial management.
-- **[homeowner-management-excel-template](https://github.com/HyVoid/homeowner-management-excel-template)** — What is my true total cost of homeownership, including all hidden expenses? — Calculate the total cost of homeownership by integrating mortgage, utilities, maintenance, and capital improvements.
-- **[crew-scheduling-excel-template](https://github.com/HyVoid/crew-scheduling-excel-template)** — Will my current crew be able to handle the workload when project dates shift and overlap? — Forecast crew demand and staffing gaps across a 12-month horizon to support capacity planning decisions.
-- **[Schedule-Driven-Construction-Cash-Curve-Workbook](https://github.com/HyVoid/Schedule-Driven-Construction-Cash-Curve-Workbook)** — How will my construction project's cash flow and planned progress unfold over time based on the schedule? — Convert construction schedules and bid-item registers into automated S-curves, time-phased cost forecasts, and planned progress trackers.
-- **[shop-floor-mrp-kanban-excel-system](https://github.com/HyVoid/shop-floor-mrp-kanban-excel-system)** — Will our shift-level welding schedule run without line-stop material shortages? — Calculate BOM-driven material requirements and Kanban replenishment signals from shift-level production schedules.
-
-More operational decision-support tools are continually being added to this collection.
-
----
+\- [Theseus Workshop](https://theseusworkshop.com) — A collection of practical tools for recurring small-business operational and financial problems.
 
 ## License
 
-This project is licensed under the **Apache License 2.0**.
+This project is licensed under the Apache License 2.0.
 
-You are free to:
-
-- Use the workbook for personal or commercial purposes.
-- Modify and extend the workbook to fit your own operational requirements.
-- Distribute derivative versions in accordance with the Apache License 2.0.
-
-Please retain the original license notice and attribution where required by the license.
-
-For the complete license text, see the accompanying **LICENSE** file in this repository.
-
----
-
-## Contributing
-
-Suggestions for improving pricing logic, menu modeling, validation workflows, or POS compatibility are always welcome.
-
-Contributions may include:
-
-- Support for additional POS platforms
-- Improved validation rules
-- New pricing models
-- Formula optimization
-- Documentation improvements
-- Restaurant-specific configuration examples
-
-Please open an Issue or submit a Pull Request with a clear description of the operational problem being addressed.
-
----
-
-## Version
-
-**Current Release**
-
-- Version: **v1.0.0**
-- License: **Apache License 2.0**
-- Platform: **Browser + Microsoft Excel 365 / Excel 2021+**
-- Status: **Production Ready**
-
----
-
-> Lightweight operational decision-support tools for businesses that need better decisions—not bigger software.
+See the LICENSE file for the complete license terms.
