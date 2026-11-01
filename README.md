@@ -1,3 +1,5 @@
+[ 🌐 عربي ](README.ar.md) | [ 🇩🇪 Deutsch ](README.de.md) | [ 🇫🇷 Français ](README.fr.md) | [ 🇳🇱 Nederlands ](README.nl.md) | [ 🇪🇸 Español ](README.sp.md) | [ 🇬🇧 English ](README.md)
+
 # Restaurant Menu Pricing Calculator, Modifier Configuration & POS Staging Toolkit (Excel & Web Template)
 <img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/45a7c5cb-ec7e-4744-a38b-e705561fe0d6" />
 
@@ -11,7 +13,7 @@
 
 > **Test Your Menu Pricing Rules Immediately in Your Browser** — No account registration, software installation, or advanced spreadsheet formulas required.
 >
-> - 🌐 **[Launch the Free Interactive Restaurant Menu Pricing Web App](YOUR_HTML_DEMO_URL)** *(Test single-session menu configurations, modifier logic, and customer order prices online)*
+> - 🌐 **[Launch the Free Interactive Restaurant Menu Pricing Web App](https://hyvoid.github.io/restaurant-menu-pricing-template/)** *(Test single-session menu configurations, modifier logic, and customer order prices online)*
 > - 📥 **[Download the Offline Restaurant POS Menu Configuration Excel Template (.xlsx)](https://theseusworkshop.com/l/dznbyd)** *(Built for permanent menu master records, multi-season price updates, and operational POS audit trails — backed by a 30-day no-questions-asked refund guarantee)*
 
 ---
@@ -47,7 +49,7 @@ Follow this 4-step menu engineering workflow to standardize your item database, 
 
 4. **Step 4: Audit Configuration Health & Lock In Long-Term Menu Maintenance with Excel**
    **Action:** Check the automated QA dashboard to clear incomplete item flags, export your validated POS staging table, and **transition from the single-session browser demo to the reusable Excel workbook**.
-   *Why it matters:* While the [Free Browser Menu Calculator](YOUR_HTML_DEMO_URL) is ideal for quick one-time testing, browser sessions do not permanently store historical changes. **[Download the Full Offline Excel Menu Master Template (.xlsx)](https://theseusworkshop.com/l/dznbyd)** to save your restaurant's permanent menu database, run recurring quarterly price updates, maintain historical audit logs, and reuse your configuration across multiple store locations without starting from scratch.
+   *Why it matters:* While the [Free Browser Menu Calculator](https://hyvoid.github.io/restaurant-menu-pricing-template/) is ideal for quick one-time testing, browser sessions do not permanently store historical changes. **[Download the Full Offline Excel Menu Master Template (.xlsx)](https://theseusworkshop.com/l/dznbyd)** to save your restaurant's permanent menu database, run recurring quarterly price updates, maintain historical audit logs, and reuse your configuration across multiple store locations without starting from scratch.
 
 **Configure global pricing rules once. Maintain one clean menu master. Simulate real customer checkout prices. Export to your POS only after automated validation.**
 
@@ -143,7 +145,7 @@ Most independent restaurants and small businesses already have their pricing dat
 
 The **Restaurant Menu Pricing Calculator & POS Configuration Toolkit** gives hospitality operators enterprise-grade menu validation inside a transparent, zero-bloat browser and Excel workflow.
 
-- 🌐 **[Try the Free Browser Menu Pricing Calculator Now](YOUR_HTML_DEMO_URL)**
+- 🌐 **[Try the Free Browser Menu Pricing Calculator Now](https://hyvoid.github.io/restaurant-menu-pricing-template/)**
 - 📥 **[Get the Full Reusable Excel Menu Master Workbook (.xlsx)](https://theseusworkshop.com/l/dznbyd)**
 
 
@@ -391,9 +393,7 @@ Decision implication: The restaurant can validate the customer-facing price befo
 
 This scenario illustrates the configured pricing logic. Actual results depend on the restaurant's own pricing matrix, modifier prices, and tax settings.
 
-````
 
-```markdown
 ### Formula Reference
 
 The workbook uses native Excel dynamic-array functions to maintain relationships between menu records, calculate prices, and generate validation outputs.
