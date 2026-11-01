@@ -1,94 +1,148 @@
-
-# Restaurant Menu Master & Pricing Configuration Toolkit
+# Restaurant Menu Pricing Calculator, Modifier Configuration & POS Staging Toolkit (Excel & Web Template)
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-![Platform](https://img.shields.io/badge/Platform-Browser%20%2B%20Excel-2251FF)
-![Tool Type](https://img.shields.io/badge/Tool-Menu%20Management%20%26%20Pricing-051C2C)
-![Architecture](https://img.shields.io/badge/Architecture-No--VBA-success)
+![Platform](https://img.shields.io/badge/Platform-Web%20App%20%2B%20Excel%20Template-2251FF)
+![Tool Type](https://img.shields.io/badge/Tool-Restaurant%20Menu%20Management%20%26%20POS%20Pricing-051C2C)
+![Architecture](https://img.shields.io/badge/Architecture-Formula--Driven%20No--VBA-success)
 
-**Manage restaurant menu data, reusable modifiers, complex pricing rules, and POS-ready exports through one structured configuration and price-validation toolkit — free in your browser, with an offline Excel version available.**
+**A free online restaurant menu pricing calculator and offline Excel POS configuration template designed for independent restaurants, pizzerias, and QSR operators. Centralize menu master data, calculate complex modifier upcharges, configure half-and-whole pizza topping rules, prevent double-charging on included recipe ingredients, and export validated POS-ready menu sheets without VBA macros.**
 
-> **Start with the free browser version.** No signup, installation, or spreadsheet expertise required.
+> **Test Your Menu Pricing Rules Immediately in Your Browser** — No account registration, software installation, or advanced spreadsheet formulas required.
 >
-> - 🌐 [Open in Browser](YOUR_HTML_DEMO_URL)
-> - 📥 [Get the Excel Version](YOUR_GUMROAD_OR_RELEASE_URL)
->
-> The Excel version is designed for permanent records, repeat menu maintenance, and operational audit trails. Purchases are covered by a 30-day, no-questions-asked money-back guarantee.
+> - 🌐 **[Launch the Free Interactive Restaurant Menu Pricing Web App](YOUR_HTML_DEMO_URL)** *(Test single-session menu configurations, modifier logic, and customer order prices online)*
+> - 📥 **[Download the Offline Restaurant POS Menu Configuration Excel Template (.xlsx)](YOUR_GUMROAD_OR_RELEASE_URL)** *(Built for permanent menu master records, multi-season price updates, and operational POS audit trails — backed by a 30-day no-questions-asked refund guarantee)*
 
-## What It Helps You Track
+---
 
-- **Menu structure and product availability** — which categories, subcategories, menu items, and product sizes are currently configured and available for sale.
-- **Base prices and modifier charges** — how much each product and size costs, including additional charges for standard and premium toppings.
-- **Default included ingredients** — which ingredients are already included in specialty products, preventing customers from being charged twice for standard portions.
-- **Half-and-whole topping prices** — the correct charge for whole pizzas, left-half toppings, and right-half toppings.
-- **Ordering restrictions** — whether customers are selecting the required number of modifiers without exceeding group-level minimum and maximum limits.
-- **POS configuration readiness** — which menu items have complete pricing and configuration data, and which still need attention before synchronization.
+## What This Restaurant Menu Management Template Helps You Track (Pain-Point to Solution Mapping)
 
-## Quick Start Workflow
-
-The toolkit follows a simple maintenance cycle: configure the menu once, update individual records when changes occur, validate the results, and export the approved configuration.
-
-1. **Set your restaurant's pricing parameters.** Define the currency symbol, applicable sales tax rate, whole-pizza and half-pizza pricing factors, premium modifier surcharge, and other operational thresholds in the dedicated Parameters sheet. These settings provide a consistent pricing baseline across the workbook.
-
-2. **Enter your menu and modifier data.** Add categories, menu items, available sizes, modifier groups, ingredients, and their prices to the designated input tables. Existing menu information can be transferred from POS exports or other spreadsheets. Use the supplied IDs to establish relationships between records.
-
-3. **Configure business rules and test customer prices.** Define which modifiers belong to each product, which ingredients are included by default, and how many selections customers can make. Use the order simulator to test different product sizes, topping quantities, and placement combinations. Review the calculated pre-tax and final customer prices.
-
-4. **Review configuration health and prepare POS changes.** Check the dashboard for incomplete records and pricing exceptions. Once the relevant records pass validation, use the automatically generated POS export table to prepare a standardized configuration update for the POS provider.
-
-**Set the pricing rules once. Maintain the menu data. Test the customer price. Export only after validation.**
-
-## Why I Built This
-
-Restaurant menu configuration becomes surprisingly difficult when a product is no longer defined by a single name and price.
-
-Consider a specialty pizza with a large base price, several included toppings, optional premium ingredients, and customer-selectable quantities. A conventional menu spreadsheet may record the product price and list its ingredients, but it does not necessarily distinguish between an ingredient already included in the selling price and an additional ingredient that should generate a surcharge.
-
-That creates two different pricing risks.
-
-First, customers can be charged twice for ingredients already included in a specialty product. Second, staff may apply inconsistent prices to extra toppings, different pizza sizes, or half-pizza selections.
-
-For example, a Hawaiian Pizza may already include ham and pineapple. Selecting normal quantities of those ingredients should not generate another charge. Selecting extra pineapple, however, may require an additional charge. A left-half topping should also be priced differently from a whole-pizza topping.
-
-These are not isolated spreadsheet errors. They are failures to represent the actual commercial relationships behind a menu.
-
-I built this toolkit to turn those relationships into a reusable, productized configuration and pricing framework. Instead of maintaining separate ingredient lists and manually checking every product, the same ingredient definitions, pricing rules, and selection constraints can be reused across the menu.
-
-The result is a more controlled workflow: maintain one source of truth, test the resulting customer price, identify configuration errors, and prepare a consistent POS change list.
-
-## Common Restaurant Menu Management Problems This Solves
-
-| Problem | Without This Tool | With This Tool |
+| Core Menu Data & Pricing Metric | Common Restaurant Operational Pain Point | How This Menu Configuration Toolkit Solves It |
 |---|---|---|
-| **Menu data fragmentation** | Categories, products, sizes, and prices are maintained in disconnected tables, making updates difficult to coordinate. | A structured menu master separates categories, products, and size-specific prices while maintaining their relationships. |
-| **Duplicate modifier maintenance** | The same ingredient is recreated for multiple products, resulting in inconsistent names, prices, and availability. | Each modifier is defined once and reused through modifier groups and assignment relationships. |
-| **Incorrect specialty product pricing** | Included ingredients may be charged again when customers retain their standard quantities. | Default ingredient mappings distinguish included quantities from additional paid selections. |
-| **Inconsistent half-pizza pricing** | Staff manually calculate left-half and right-half topping charges, increasing the likelihood of inconsistent prices. | Centralized pricing factors generate half-portion prices from the whole-portion reference price. |
-| **Invalid customer selections** | Required ingredients, minimum selections, and maximum selections are not consistently enforced during menu configuration. | Modifier-group selection rules provide explicit minimum, maximum, and multiple-selection constraints. |
-| **POS configuration errors** | Incomplete product records and incorrect prices may be sent to the POS provider without a systematic review. | Automated validation, an order-price simulator, and a POS-ready export help identify problems before synchronization. |
+| **Menu Master Hierarchy & Size Availability** | Menu categories, item sizes (Small/Medium/Large), and seasonal availability are scattered across outdated PDFs and POS exports. | Tracks active categories, subcategories, item SKUs, and size-specific availability in one relational menu master database. |
+| **Base Menu Prices & Tiered Modifier Upcharges** | Staff guess extra topping charges or charge flat fees that ignore size differences, eroding food profit margins. | Calculates exact base prices plus standard and premium modifier surcharges scaled by product size. |
+| **Default Recipe Ingredients (No Double-Charging)** | Customers ordering specialty items (e.g., Hawaiian or Supreme Pizza) get double-charged when keeping standard included toppings. | Maps default included ingredients per item so standard quantities cost $0 extra while "Extra" portions trigger an automatic upcharge. |
+| **Fractional & Half-Pizza Topping Pricing** | Manual calculation of left-half, right-half, and whole-pizza toppings leads to checkout delays and inconsistent customer bills. | Applies global fractional pricing multipliers to automatically compute accurate half-portion and whole-portion topping charges. |
+| **Modifier Group Min/Max Selection Limits** | Customers select invalid combo options or skip required choices (like crust type or cooking temperature) due to broken POS rules. | Enforces strict minimum, maximum, and per-modifier quantity limits at the modifier-group level before live deployment. |
+| **Pre-POS Menu Sync Readiness & QA Status** | Uploading incomplete item records or unverified prices directly into a live POS breaks kitchen tickets and online ordering. | Flags missing prices and broken modifier links on a validation dashboard, isolating clean, POS-ready export rows. |
 
-## Who This Is For
+---
 
-Designed for independent restaurants, pizza shops, quick-service restaurants, and multi-product food businesses that need to maintain structured menus with multiple sizes, reusable ingredients, conditional modifier pricing, and customer selection restrictions.
+## Step-by-Step Tutorial: How to Configure Restaurant Menu Pricing & Prepare POS Imports
 
-Particularly useful for:
+Follow this 4-step menu engineering workflow to standardize your item database, test complex order combinations, and generate a clean POS import sheet:
 
-- Restaurant owners maintaining their own menu and pricing configurations.
-- Operations managers responsible for menu updates and product consistency.
-- Menu administrators preparing product and modifier changes for POS providers.
-- Restaurant consultants organizing complex menu structures for clients.
+1. **Step 1: Configure Global Restaurant Tax, Currency & Fractional Pricing Parameters**
+   **Action:** Open the `Parameters` tab and input your local sales tax rate, currency symbol, half-topping price multiplier, and premium modifier upcharge factor.
+   *Why it matters:* Setting global pricing variables once establishes a unified calculation baseline across every menu category and item size.
 
-**Who this is not designed for:** Restaurants looking for a complete POS system, payment processor, kitchen display system, inventory management platform, or automated ordering infrastructure. This toolkit focuses on menu master data, pricing configuration, rule validation, and POS preparation. It does not replace the operational POS platform.
+2. **Step 2: Import or Enter Your Menu Master List, Sizes & Modifier Groups**
+   **Action:** Populate the structured input tables with your menu categories, dish names, size variations, modifier groups, and raw ingredient prices—or paste existing rows from your current POS CSV export.
+   *Why it matters:* Linking items and modifiers through clean relational IDs eliminates duplicate data entry when ingredient prices change.
 
-No spreadsheet expertise needed to get started. Open the free browser version and begin organizing menu information immediately.
+3. **Step 3: Map Default Recipe Inclusions & Simulate Real Customer Orders**
+   **Action:** Assign modifier groups to specific menu items, mark built-in specialty ingredients, and run test orders in the interactive **Order Price Simulator** (testing size changes, left/right half toppings, and extra portions).
+   *Why it matters:* Real-time pre-tax and post-tax order simulation exposes underpriced add-ons and double-charging bugs before a single customer places an order.
 
-## About
+4. **Step 4: Audit Configuration Health & Lock In Long-Term Menu Maintenance with Excel**
+   **Action:** Check the automated QA dashboard to clear incomplete item flags, export your validated POS staging table, and **transition from the single-session browser demo to the reusable Excel workbook**.
+   *Why it matters:* While the [Free Browser Menu Calculator](YOUR_HTML_DEMO_URL) is ideal for quick one-time testing, browser sessions do not permanently store historical changes. **[Download the Full Offline Excel Menu Master Template (.xlsx)](YOUR_GUMROAD_OR_RELEASE_URL)** to save your restaurant's permanent menu database, run recurring quarterly price updates, maintain historical audit logs, and reuse your configuration across multiple store locations without starting from scratch.
 
-I build lightweight business tools that turn recurring operational problems into structured, reusable decision-support workflows.
+**Configure global pricing rules once. Maintain one clean menu master. Simulate real customer checkout prices. Export to your POS only after automated validation.**
 
-Many small businesses already have the necessary information, but it is scattered across spreadsheets, system exports, and manually maintained records. The practical challenge is deciding what information needs to be connected, what rules must be consistent, and what should be checked before an operational decision is made.
+---
 
-The Restaurant Menu Master & Pricing Configuration Toolkit is one example of this approach: a focused tool for maintaining menu relationships and testing pricing outcomes without introducing the complexity of a full enterprise system.
+## Why Standard Restaurant Menu Spreadsheets Fail at Modifier & Topping Pricing
+
+Restaurant menu management becomes deceptively complex the moment a dish is no longer defined by a single flat price.
+
+Consider a specialty pizza or customizable combo meal with size-based pricing, included default toppings, optional premium add-ons, and customer-selectable quantities. A conventional Excel or Google Sheets menu list can record base item prices, but it fails to separate **ingredients already included in the base recipe** from **extra modifiers that require an upcharge**.
+
+This structural blind spot creates two costly commercial risks for food businesses:
+
+1. **The Double-Charging Customer Trap:** Customers are accidentally charged extra for standard ingredients already built into a specialty dish's base price, leading to checkout disputes and abandoned online orders.
+2. **Silent Profit Margin Erosion:** Cashiers and POS administrators apply inconsistent prices to extra toppings, size upgrades, or half-and-half pizza selections because pricing rules are calculated by hand.
+
+For example, a **Hawaiian Pizza** includes normal portions of ham and pineapple in its base price. Keeping standard quantities of ham and pineapple must add **$0.00** to the bill. Ordering *extra* pineapple, however, must trigger a size-adjusted surcharge—and placing a premium topping on the **Left Half** only should follow a defined fractional pricing rule rather than guesswork.
+
+These are not simple typing mistakes. They happen because flat spreadsheets cannot model the commercial rules behind a modern restaurant menu.
+
+This toolkit turns those menu relationships into a structured, formula-driven configuration system. Instead of maintaining duplicate topping lists for every item and manually checking prices, you define ingredients, modifier groups, and pricing rules once—and apply them consistently across your entire menu.
+
+---
+
+## Manual Menu Spreadsheets vs. Structured POS Menu Configuration Toolkit
+
+| Restaurant Menu Configuration Challenge | Manual Spreadsheets & Direct POS Edits (Without This Tool) | Structured Menu Master & Pricing Toolkit (With This Tool) |
+|---|---|---|
+| **Menu Master Data Fragmentation** | Categories, item sizes, and modifier prices live in disconnected tabs or unorganized CSV exports, causing version control chaos during menu updates. | Relational master tables separate categories, base items, and size-specific price matrices while preserving automatic ID lookups. |
+| **Duplicate Modifier & Topping Maintenance** | The same cheese, sauce, or topping is typed repeatedly across dozens of menu items, creating mismatched names and outdated upcharge prices. | Each ingredient modifier is created once in a central library and linked to multiple dishes via reusable modifier groups. |
+| **Specialty Item & Default Recipe Pricing Bugs** | Standard included toppings on specialty pizzas or burgers are mistakenly billed as paid add-ons when customers customize their order. | Default recipe mapping distinguishes built-in standard quantities ($0 charge) from paid "Extra" upgrades automatically. |
+| **Inconsistent Half-Pizza & Fractional Pricing** | Staff manually calculate left-half, right-half, and whole-pizza topping charges, resulting in billing errors and cashier guesswork. | Global fractional pricing factors automatically calculate half-portion topping prices from the whole-pizza reference rate. |
+| **Broken POS Modifier Selection Rules** | Minimum required choices and maximum topping caps are forgotten during setup, allowing impossible orders to reach the kitchen display. | Modifier-group constraint rules enforce explicit Min/Max selection limits and per-item quantity caps during staging. |
+| **Live POS Deployment & Sync Errors** | Unverified prices and incomplete item rows are entered directly into live POS terminals, causing checkout crashes during peak service hours. | Built-in QA validation flags missing data, simulates customer receipts, and generates a clean, pre-verified POS export table. |
+
+---
+
+## Who This Restaurant Menu & Pricing Template Is For (Target Roles & Use Cases)
+
+Built for independent restaurants, pizzerias, quick-service restaurants (QSR), fast-casual concepts, and multi-unit food operations that manage multi-size menus, shared ingredient modifiers, conditional upcharges, and strict customer ordering rules.
+
+### Role-Based Search Scenarios & Operational Use Cases
+
+- **Pizzeria Owners & Independent Restaurant Operators (`Pizza Menu Pricing Calculator & Topping Spreadsheet`)**
+  Stop losing money on unbilled extra toppings or overcharging customers on specialty pizzas. Model whole-pizza vs. half-pizza topping multipliers, size-based surcharges, and included recipe items before updating your physical boards or online ordering menu.
+- **QSR & Fast-Casual Operations Managers (`Multi-Size Restaurant Menu Management Template`)**
+  Standardize menu hierarchies, combo modifier groups, and seasonal price adjustments across multiple product categories in one centralized offline master file without relying on fragile VBA scripts.
+- **POS Onboarding Specialists & Menu Administrators (`Restaurant POS Menu Staging & Import Checklist`)**
+  Clean, organize, and validate raw menu data before building or updating databases in Toast, Square, Clover, Lightspeed, or custom POS platforms. Catch missing base prices and broken modifier min/max rules before going live.
+- **Restaurant Consultants & Menu Engineers (`Menu Engineering & Modifier Architecture Toolkit`)**
+  Deliver a repeatable, audit-ready menu configuration workbook to hospitality clients. Restructure messy client menus into logical modifier groups and demonstrate exact customer checkout pricing during consulting engagements.
+
+**Who this toolkit is NOT designed for:**
+Food businesses looking for a live point-of-sale terminal, credit card payment processor, kitchen display system (KDS), raw inventory depletion tracker, or automated recipe nutrition calculator. This toolkit is a **pre-POS menu master, pricing simulator, and configuration QA system**—it prepares and validates your commercial menu logic so your POS platform runs without pricing errors.
+
+---
+
+## The Business Logic & Methodology: Solving Hidden Restaurant Pricing Blind Spots
+
+*(Written for restaurant owners and operators—no technical or advanced spreadsheet background required)*
+
+When customers order food, menu pricing looks simple on the surface: pick an item, add a topping, pay the total. Behind the counter, however, most independent restaurants lose money or frustrate customers because of **three hidden commercial blind spots** that standard spreadsheets fail to catch.
+
+Here is how the business logic inside this toolkit protects your profit margins and customer experience in plain English:
+
+### 1. Eliminating the "One-Update, Ten-Mistakes" Problem (Single Source of Truth)
+* **The Blind Spot:** Suppose the wholesale cost of mozzarella cheese or bacon jumps by 20%. In a typical restaurant spreadsheet, "Extra Bacon" is listed separately under Burgers, Sandwiches, Salads, and Pizzas. If you update the price in three places but forget the fourth, you either lose profit margin or confuse customers with inconsistent pricing.
+* **How the Toolkit Fixes It:** You enter every ingredient and modifier **once** in a central list. Whether that ingredient is used on 2 items or 50 items, updating its price in one cell automatically updates every connected menu item and order calculation across the entire workbook.
+
+### 2. Preventing the "Specialty Item Double-Charge" Trap (Conditional Recipe Pricing)
+* **The Blind Spot:** When a customer orders a "Meat Lover's Pizza" or a "Deluxe Burger," they are already paying a higher base price because pepperoni, sausage, or cheese is included in the recipe. If your menu setup treats every topping the same, your system might accidentally charge the customer *again* just for confirming the standard ingredients—or, if you make all toppings free to avoid complaints, you lose money when someone asks for *double* meat.
+* **How the Toolkit Fixes It:** The template separates **"Included by Default"** from **"Paid Extra."** It knows that 1x Pepperoni on a Pepperoni Pizza costs $0.00 extra, while increasing the quantity to 2x (Extra Pepperoni) automatically charges the exact upgrade price. You protect customer trust without giving away free food.
+
+### 3. Stopping Cashier Guesswork on Half-Toppings & Sizes (Proportional Pricing Logic)
+* **The Blind Spot:** Customers frequently ask for toppings on only the left half or right half of a pizza, or switch between Small, Medium, and Large sizes. Without a clear formula, staff either charge the full whole-pizza topping price (upsetting the customer) or manually cut prices in half without accounting for preparation labor (hurting your margins).
+* **How the Toolkit Fixes It:** You set a single rule—for example, "A half-pizza topping costs 60% of a whole-pizza topping." The toolkit automatically calculates the exact penny-accurate charge for Left-Half, Right-Half, and Whole placements across every pizza size.
+
+### 4. Blocking Impossible Kitchen Tickets (Min/Max Selection Guardrails)
+* **The Blind Spot:** If a customer orders a combo meal online and forgets to choose a required side dish—or selects 12 free sauces when only 2 are allowed—your kitchen staff has to stop cooking, call the customer, or absorb the cost.
+* **How the Toolkit Fixes It:** You define simple boundary rules for every option group (e.g., *"Must pick at least 1 crust; maximum 1"* or *"Pick up to 4 standard toppings"*). The built-in Order Simulator tests your menu against these rules immediately, showing you if a customer could accidentally place an invalid order.
+
+### 5. Testing Before You Go Live (Pre-POS Quality Assurance)
+* **The Blind Spot:** Most restaurants discover menu pricing mistakes *after* they update their POS system—usually when a rush-hour customer complains at the register or an online delivery app charges the wrong total.
+* **How the Toolkit Fixes It:** The toolkit acts as a safe "crash test dummy" for your menu. You can simulate real customer orders, see the exact pre-tax and post-tax receipt, and check an automatic health dashboard that highlights missing prices in red. You only export your menu to your POS once every item passes inspection.
+
+---
+
+## About the Creator
+
+I build practical, formula-driven business tools that turn messy operational data into structured, repeatable decision-support workflows.
+
+Most independent restaurants and small businesses already have their pricing data, but it is trapped inside disconnected spreadsheets, messy POS exports, and undocumented staff habits. The real operational challenge is connecting those records, enforcing consistent pricing rules, and catching configuration mistakes before they reach paying customers.
+
+The **Restaurant Menu Pricing Calculator & POS Configuration Toolkit** gives hospitality operators enterprise-grade menu validation inside a transparent, zero-bloat browser and Excel workflow.
+
+- 🌐 **[Try the Free Browser Menu Pricing Calculator Now](YOUR_HTML_DEMO_URL)**
+- 📥 **[Get the Full Reusable Excel Menu Master Workbook (.xlsx)](YOUR_GUMROAD_OR_RELEASE_URL)**
 
 
 ## Technical Details
@@ -866,19 +920,6 @@ Important operational distinction: The validation layer checks the configured re
 
 </details>
 
-## The Business Logic & Methodology
-
-Restaurant menu pricing is not simply a matter of adding ingredient prices to product prices. It requires understanding which ingredients are already included, which selections create additional charges, how portion sizes affect those charges, and which combinations customers are permitted to order.
-
-This toolkit applies several practical business methods to make those commercial relationships explicit.
-
-- Relational master-data management: Separates products, sizes, ingredients, and modifier groups into reusable records. This prevents duplicate maintenance and makes menu-wide changes more consistent.
-- Conditional pricing: Distinguishes included ingredients from additional purchases and applies different charges according to the selected quantity. This prevents double charging while preserving revenue from genuine upgrades.
-- Proportional portion pricing: Uses whole-product prices as the reference for half-product selections. This creates consistent pricing for left-half, right-half, and whole-pizza toppings without maintaining unrelated prices for each placement.
-- Constraint-based configuration: Defines the minimum and maximum number of permitted selections for each modifier group. This helps prevent impossible ordering configurations and reduces manual correction by restaurant staff.
-- Pre-deployment quality assurance: Tests representative customer orders, checks configuration exceptions, and separates POS-ready records from incomplete ones. This reduces the chance of transferring incorrect prices or incomplete product relationships into the live ordering environment.
-
-The central commercial objective is straightforward: make the menu's actual pricing and ordering logic consistent before it reaches the customer or the POS system.
 
 ## Other Tools in This Series
 
