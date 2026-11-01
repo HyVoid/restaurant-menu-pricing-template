@@ -1,555 +1,936 @@
 [ 🌐 عربي ](README.ar.md) | [ 🇩🇪 Deutsch ](README.de.md) | [ 🇫🇷 Français ](README.fr.md) | [ 🇳🇱 Nederlands ](README.nl.md) | [ 🇪🇸 Español ](README.sp.md) | [ 🇬🇧 English ](README.md)
 
-# Restaurant-Menu-Configuration-Modifier-Pricing-Toolkit
+# Restaurant-Menü-Preisrechner, Modifier-Konfiguration & POS-Vorbereitungs-Toolkit (Excel & Web-Vorlage)
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/45a7c5cb-ec7e-4744-a38b-e705561fe0d6" />
 
-## Excel Decision-Support Toolkit for Restaurant Menu Configuration, Modifier Pricing & POS Menu Governance
 
-![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
-![Platform](https://img.shields.io/badge/Platform-Browser%20%2B%20Excel-success)
-![Tool](https://img.shields.io/badge/Tool-Menu%20Configuration%20%26%20Decision%20Support-orange)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+![Platform](https://img.shields.io/badge/Platform-Web%20App%20%2B%20Excel%20Template-2251FF)
+![Tool Type](https://img.shields.io/badge/Tool-Restaurant%20Menu%20Management%20%26%20POS%20Pricing-051C2C)
+![Architecture](https://img.shields.io/badge/Architecture-Formula--Driven%20No--VBA-success)
 
-**Build and maintain a single source of truth for restaurant menus, modifier pricing, and POS configuration—directly in a browser or Excel workbook, with no installation, no signup, and no manual pricing calculations.**
+**Ein kostenloser Online-Restaurant-Menü-Preisrechner und eine Offline-Excel-POS-Konfigurationsvorlage für unabhängige Restaurants, Pizzerien und QSR-Betreiber. Zentralisieren Sie Menü-Stammdaten, berechnen Sie komplexe Modifier-Aufpreise, konfigurieren Sie Belag-Regeln für halbe und ganze Pizzen, verhindern Sie Doppelabbuchungen bei bereits in der Rezeptur enthaltenen Zutaten und exportieren Sie validierte, POS-fertige Menü-Tabellenblätter – ganz ohne VBA-Makros.**
 
-**No signup. No installation. Free in your browser.**
-
-Testen Sie die Browser-Version kostenlos. Wenn Sie die Excel-Version benötigen, können Sie sie mit einer 30-tägigen, unkomplizierten Geld-zurück-Garantie erwerben.
+> **Testen Sie Ihre Menü-Preisregeln sofort in Ihrem Browser** — Keine Konto-Registrierung, keine Software-Installation und keine komplexen Tabellenformeln erforderlich.
 >
-> 🌐 **Im Browser öffnen** → [Browser-Version (Live-Demo als HTML)](https://hyvoid.github.io/Restaurant-Menu-Configuration-Modifier-Pricing-Toolkit/)
->
-> 📥 **Excel herunterladen**
->
-> [Excel-Arbeitsmappe](https://www.theseusworkshop.com/) (neueste Version)
+> - 🌐 **[Starten Sie die kostenlose interaktive Restaurant-Menü-Preisrechner-Web-App](https://hyvoid.github.io/restaurant-menu-pricing-template/)** *(Testen Sie Einzel-Sitzungs-Menükonfigurationen, Modifier-Logik und Kundenbestellpreise online)*
+> - 📥 **[Laden Sie die Offline-Restaurant-POS-Menü-Konfigurations-Excel-Vorlage (.xlsx) herunter](https://theseusworkshop.com/l/dznbyd?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=restaurant-menu-pricing-template)** *(Gebaut für dauerhafte Menü-Stammdatensätze, mehrsaisonale Preisaktualisierungen und betriebliche POS-Prüfprotokolle — mit einer 30-tägigen bedingungslosen Geld-zurück-Garantie)*
 
 ---
 
-## Was Sie damit nachverfolgen können
+## Was diese Restaurant-Menü-Verwaltungsvorlage Ihnen hilft nachzuverfolgen (Schmerzpunkt-zu-Lösung-Zuordnung)
 
-- Die vollständige Menühierarchie über Kategorien, Produkte, Größen und Modifier-Gruppen hinweg aus einer konsistenten Quelle.
-- Grundpreise, Modifier-Preise, Halb-Halb-Preislogik und Aufpreise für Zusatzportionen – ohne widersprüchliche Preistabellen.
-- Standardzutaten gegenüber kundenseitig hinzugefügten Modifiern, um versehentliche Überberechnungen zu verhindern.
-- Speisekarten-Konfigurationen, die für den POS-Import bereit sind, statt Preistabellen manuell neu aufzubauen.
-- Fehlende Preise, unterbrochene Beziehungen und Konfigurationsfehler, bevor Speisekarten-Updates Kunden erreichen.
-- Durchgängige Preisvalidierung anhand realistischer Bestellsimulationen – statt Hunderte einzelner Speisekarten-Kombinationen zu prüfen.
-
----
-
-## Schnellstart-Workflow
-
-1. **Preisparameter des Restaurants einmalig festlegen**
-
-   Öffnen Sie das Blatt **System Parameters** und definieren Sie die betrieblichen Regeln, die sich selten ändern – etwa Faktoren für halbe Pizzen, Multiplikatoren für Extras, den Steuersatz, die Standardwährung oder andere Preisrichtlinien. Diese Werte bilden die Grundlage für jede nachfolgende Berechnung und lassen sich zentral anpassen, ohne Formeln zu bearbeiten.
-
-2. **Bestehende Speisekartendaten importieren oder pflegen**
-
-   Füllen Sie die vorgesehenen Master-Blätter mit den vorhandenen Speisekartendaten. Kategorien, Menüpunkte, Größen, Beläge, Modifier-Gruppen und Preise lassen sich direkt aus einer bestehenden Tabelle kopieren oder aus einer POS-Plattform exportieren. Ein Umsstrukturieren oder manuelle Neuberechnen ist nicht erforderlich, da jedes Blatt einem eigenen geschäftlichen Zweck dient.
-
-3. **Ergebnisse sofort prüfen**
-
-   Wechseln Sie zum Dashboard oder zum Blatt für Bestelltests, um automatisch erzeugte Preise, Beziehungsprüfungen, Menü-Integritätschecks und vollständige Kundenbestellberechnungen zu prüfen. Änderungen in den Master-Daten wirken sich im gesamten Workbook aus, ohne Berichte neu erstellen zu müssen.
-
-4. **Aktualisieren, sobald sich die Speisekarte ändert**
-
-   Neue Menüpunkte, saisonale Aktionen, Preisanpassungen oder Modifier-Updates erfordern lediglich Änderungen an den betreffenden Eingabetabellen. Bestehende Berechnungen, Validierungslogik, Dashboards und POS-Exportstrukturen funktionieren automatisch weiter – ohne Neukonfiguration.
-
-**Setzen Sie einige wenige Kernparameter ein. Übernehmen Sie vorhandene Speisekartendaten. Prüfen Sie die Analyse. Aktualisieren Sie bei jeder Änderung der Speisekarte.**
+| Kern-Menüdaten & Preiskennzahl | Häufiger betrieblicher Schmerzpunkt in Restaurants | Wie dieses Menü-Konfigurations-Toolkit das löst |
+|---|---|---|
+| **Menü-Stammhierarchie & Größenverfügbarkeit** | Menükategorien, Artikelgrößen (Klein/Mittel/Groß) und saisonale Verfügbarkeit sind verstreut über veraltete PDFs und POS-Exporte. | Erfasst aktive Kategorien, Unterkategorien, Artikel-SKUs und größen-spezifische Verfügbarkeit in einer relationalen Menü-Stammdatenbank. |
+| **Basis-Menüpreise & gestaffelte Modifier-Aufpreise** | Mitarbeitende schätzen Zusatzbelag-Gebühren oder berechnen Pauschalgebühren, die Größenunterschiede ignorieren, und verschleiern so die Food-Gewinnmargen. | Berechnet exakte Basispreise plus Standard- und Premium-Modifier-Zuschläge, skaliert nach Produktgröße. |
+| **Standard-Rezepturzutaten (keine Doppelabbuchung)** | Kunden, die Spezialartikel bestellen (z. B. Hawaiian- oder Supreme-Pizza), werden doppelt belastet, wenn sie die standardmäßig enthaltenen Beläge behalten. | Ordnet jedem Artikel die standardmäßig enthaltenen Zutaten zu, sodass Standardmengen $0 extra kosten, während „Extra“-Portionen automatisch einen Aufpreis auslösen. |
+| **Teilbetrag- & halbe-Pizza-Belagspreise** | Manuelle Berechnung von Belägen für linke Hälfte, rechte Hälfte und ganze Pizza führt zu Verzögerungen an der Kasse und inkonsistenten Kundenrechnungen. | Wendet globale fraktionale Preismultiplikatoren an, um halbe und ganze Belagsportionen automatisch korrekt zu berechnen. |
+| **Min/Max-Auswahllimits von Modifier-Gruppen** | Kunden wählen ungültige Kombioptionen oder überspringen Pflichtauswahlen (z. B. Bodenart oder Gargrad), weil die POS-Regeln fehlerhaft sind. | Erzwingt strenge Mindest-, Höchst- und Mengenlimits pro Modifier auf der Ebene der Modifier-Gruppe vor dem Live-Einsatz. |
+| **POS-Vorbereitung & QA-Status vor der Menü-Synchronisierung** | Das Hochladen unvollständiger Artikeldatensätze oder ungeprüfter Preise direkt in ein Live-POS zerstört Küchenbons und Online-Bestellungen. | Markiert fehlende Preise und defekte Modifier-Verknüpfungen auf einem Validierungs-Dashboard und isoliert saubere, POS-fertige Exportzeilen. |
 
 ---
 
-## Warum ich das gebaut habe
+## Schritt-für-Schritt-Anleitung: So konfigurieren Sie Restaurant-Menüpreise & bereiten POS-Importe vor
 
-Das Management einer Restaurantspeisekarte wirkt einfach – bis die Speisekarte mehr als eine Handvoll Produkte umfasst.
+Folgen Sie diesem 4-stufigen Menü-Engineering-Workflow, um Ihre Artikeldatenbank zu standardisieren, komplexe Bestellkombinationen zu testen und ein sauberes POS-Import-Tabellenblatt zu erzeugen:
 
-Ein typisches Pizzarestaurant bietet mehrere Größen, dutzende Beläge, Spezialpizzen mit Standardzutaten, Halb-Halb-Konfigurationen, Premium-Modifier, Zusatzportionen und unterschiedliche Preisregeln je nach Position des Belags an. Für sich genommen wirkt jede Regel handhabbar. Zusammen erzeugen sie Hunderte – oder sogar Tausende – möglicher Preiskombinationen.
+1. **Schritt 1: Globale Restaurant-Steuer-, Währungs- & Fraktionspreisparameter konfigurieren**
+   **Aktion:** Öffnen Sie das `Parameters`-Tab und geben Sie Ihren lokalen Umsatzsteuersatz, Ihr Währungssymbol, den Preis-Multiplikator für halbe Beläge und den Premium-Modifier-Aufpreisfaktor ein.
+   *Warum das wichtig ist:* Das einmalige Festlegen globaler Preisvariablen schafft eine einheitliche Berechnungsbasis über alle Menükategorien und Artikelgrößen hinweg.
 
-Viele Restaurants pflegen diese Beziehungen weiterhin manuell über getrennte Tabellen, POS-Backoffice-Systeme und Online-Bestellplattformen. Irgendwann driften diese Kopien auseinander. Preise passen nicht mehr. Standardzutaten werden doppelt berechnet. Die Halb-Pizza-Preislogik wird inkonsistent. Das Personal verbringt Stunden damit, einzelne Kombinationen zu prüfen, statt die Speisekarte selbst zu verbessern.
+2. **Schritt 2: Menü-Stammliste, Größen & Modifier-Gruppen importieren oder eingeben**
+   **Aktion:** Befüllen Sie die strukturierten Eingabetabellen mit Ihren Menükategorien, Gerichtnamen, Größenvarianten, Modifier-Gruppen und Roh-Zutatenpreisen – oder fügen Sie bestehende Zeilen aus Ihrem aktuellen POS-CSV-Export ein.
+   *Warum das wichtig ist:* Die Verknüpfung von Artikeln und Modifiern über saubere relationale IDs eliminiert doppelte Dateneingabe, wenn sich Zutatenpreise ändern.
 
-Ich habe diese Arbeitsmappe als wiederverwendbaren operativen Rahmen gebaut – nicht als eine weitere Preistabelle.
+3. **Schritt 3: Standard-Rezepturbestandteile zuordnen & echte Kundenbestellungen simulieren**
+   **Aktion:** Weisen Sie Modifier-Gruppen bestimmten Menüartikeln zu, markieren Sie eingebaute Spezialzutaten und führen Sie Testbestellungen im interaktiven **Bestellpreis-Simulator** durch (testen Sie Größenwechsel, linke/rechte halbe Beläge und Zusatzportionen).
+   *Warum das wichtig ist:* Die Echtzeit-Simulation von Bestellungen vor und nach Steuern deckt Extras mit zu niedrigen Preisen und Doppelabbuchungsfehler auf, bevor auch nur ein Kunde eine Bestellung aufgibt.
 
-Statt jede mögliche Speisekartenkombination manuell zu prüfen, modelliert die Arbeitsmappe die Beziehungen hinter der Speisekarte selbst. Modifier-Regeln, Standardzutaten, Preislogik und Validierung werden zu strukturierten Daten statt zu verdeckten Annahmen.
+4. **Schritt 4: Konfigurationsqualität prüfen & langfristige Menüpflege mit Excel verankern**
+   **Aktion:** Prüfen Sie das automatisierte QA-Dashboard, um unvollständige Artikel-Markierungen zu bereinigen, exportieren Sie Ihre validierte POS-Vorbereitungstabelle und **wechseln Sie von der Einzel-Sitzungs-Browser-Demo zur wiederverwendbaren Excel-Arbeitsmappe**.
+   *Warum das wichtig ist:* Während der [kostenlose Browser-Menürechner](https://hyvoid.github.io/restaurant-menu-pricing-template/) ideal für schnelle Einmaltests ist, speichern Browser-Sitzungen historische Änderungen nicht dauerhaft. **[Laden Sie die vollständige Offline-Excel-Menü-Stammvorlage (.xlsx) herunter](https://theseusworkshop.com/l/dznbyd?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=restaurant-menu-pricing-template)**, um die dauerhafte Menüdatenbank Ihres Restaurants zu speichern, wiederkehrende vierteljährliche Preisaktualisierungen durchzuführen, historische Prüfprotokolle zu pflegen und Ihre Konfiguration über mehrere Standorte hinweg wiederzuverwenden, ohne bei null anzufangen.
 
-Beispiel: Bevor dieser Rahmen genutzt wurde, erforderte das Hinzufügen eines Premium-Belags nur zur Hälfte einer Spezialpizza häufig eine manuelle Prüfung, ob der Belag bereits standardmäßig enthalten ist und ob nur der Aufpreis gelten sollte. Nach einmaliger Konfiguration des Preis-Engine wird dasselbe Szenario jedes Mal konsistent nach den zugrunde liegenden Geschäftsregeln berechnet – nicht nach menschlichem Gedächtnis.
-
-Das Ergebnis ist nicht einfach schnellere Wartung – es ist ein wiederholbares Entscheidungsunterstützungssystem, das Preisfehler reduziert, bevor Kunden überhaupt bestellen.
-
----
-
-## Häufige Probleme bei Restaurantspeisekarten, die dieses Tool löst
-
-| Problem | Ohne dieses Tool | Mit diesem Tool |
-|----------|------------------|----------------|
-| Modifier-Preise werden über die Größen hinweg inkonsistent | Mehrere Preistabellen driften langsam auseinander und führen zu Kundenstreitigkeiten und manuellen Korrekturen. | Modifier-Preise werden aus zentralisierten Preisregeln und gemeinsamen Parametern erzeugt. |
-| Standardzutaten werden versehentlich doppelt berechnet | Bei Spezialpizzen müssen Mitarbeitende im Gedächtnis behalten, welche Beläge bereits enthalten sind. | Standard-Modifier werden automatisch erkannt, sodass nur gültige Aufpreise berechnet werden. |
-| Speisekarten-Updates erfordern das Bearbeiten vieler Tabellenblätter | Jede Preisänderung muss in mehrere voneinander unabhängige Tabellen kopiert werden. | Die Kernpreispflege erfolgt einmal und fließt automatisch durch alle abhängigen Berechnungen. |
-| POS-Importe enthalten unvollständige Preisbeziehungen | Fehlende Modifier-Zuordnungen führen nach der Menü-Einführung zu Fehlern. | Beziehungen werden vor dem Export geprüft, was Konfigurationsfehler reduziert. |
-| Manuelle Tests übersehen Preis-Sonderfälle | Personal prüft wegen Zeitmangels nur eine kleine Stichprobe von Kombinationen. | Das Blatt zur Bestellsimulation bildet realistische Kundenbestellungen für eine umfassende Preisvalidierung nach. |
-| Konfigurationsfehler bleiben verborgen, bis Kunden sie melden | Unterbrochene Beziehungen werden oft erst erkannt, nachdem die Speisekarte live ist. | Dashboard-Prüfungen zeigen fehlende Preise, verwaiste Modifier und unvollständige Menüstrukturen vor dem Bereitstellen. |
+**Konfigurieren Sie globale Preisregeln einmal. Pflegen Sie einen sauberen Menüstamm. Simulieren Sie echte Kunden-Kassenpreise. Exportieren Sie erst nach automatisierter Validierung in Ihr POS.**
 
 ---
 
-## Für wen ist das gedacht
+## Warum Standard-Restaurant-Menü-Tabellen bei Modifier- & Belagspreisen scheitern
 
-Diese Arbeitsmappe richtet sich an Restaurantinhaber, Speisekartenmanager, Franchisenehmer, POS-Implementierungsberater, Hospitality-Analysten und Betriebsteams, die komplexe Restaurantspeisekarten mit konfigurierbaren Produkten und Modifier-Preisen pflegen.
+Die Verwaltung einer Restaurantspeisekarte wird tückisch komplex, sobald ein Gericht nicht mehr durch einen einzelnen Pauschalpreis definiert ist.
 
-Besonders wertvoll ist sie für Unternehmen, die Spezialpizzen, anpassbare Menüs, mehrere Produktgrößen, Premium-Extras und POS-Integrationen verwalten – also überall dort, wo Preis Konsistenz entscheidend ist.
+Denken Sie an eine Spezialpizza oder ein anpassbares Kombi-Menü mit größenabhängiger Preisgestaltung, standardmäßig enthaltenen Belägen, optionalen Premium-Extras und kundenwählbaren Mengen. Eine herkömmliche Excel- oder Google-Sheets-Menüliste kann Basisartikelpreise erfassen, aber sie trennt nicht **Zutaten, die bereits in der Basisrezeptur enthalten sind**, von **zusätzlichen Modifiern, die einen Aufpreis erfordern**.
 
-Sie ist **nicht** dazu gedacht, eine Unternehmens-POS-Plattform oder ein Restaurant-ERP-System zu ersetzen. Stattdessen bietet sie eine strukturierte Entscheidungsebene, um menübezogene Logik zu organisieren, Preisregeln zu prüfen und verlässliche Menüdaten vor dem Bereitstellen aufzubereiten.
+Dieser strukturelle blinde Fleck erzeugt zwei kostspielige geschäftliche Risiken für Gastronomiebetriebe:
 
-Excel-Kenntnisse sind nicht erforderlich. Öffnen Sie die Browser-Version für schnellen Zugriff oder verwenden Sie die Excel-Arbeitsmappe für vollständiges Speisekartenmanagement und laufende Wartung.
+1. **Die Doppelabbuchungs-Falle für Kunden:** Kunden werden versehentlich zusätzlich für Standardzutaten belastet, die bereits im Basispreis eines Spezialgerichts enthalten sind – das führt zu Kassenstreitigkeiten und abgebrochenen Online-Bestellungen.
+2. **Stille Erosion der Gewinnmargen:** Kassierer und POS-Administratoren wenden inkonsistente Preise auf Extra-Beläge, Größenupgrades oder Halb-Halb-Pizza-Auswahlen an, weil die Preisregeln von Hand berechnet werden.
+
+Zum Beispiel enthält eine **Hawaiian-Pizza** normale Portionen Schinken und Ananas in ihrem Basispreis. Die Beibehaltung der Standardmengen von Schinken und Ananas darf **$0.00** zur Rechnung hinzufügen. Bestellt der Kunde jedoch *extra* Ananas, muss ein größenangepasster Zuschlag ausgelöst werden – und ein Premium-Belag nur auf der **linken Hälfte** sollte einer definierten fraktionalen Preisregel folgen und nicht dem Rätselraten.
+
+Das sind keine einfachen Tippfehler. Sie passieren, weil flache Tabellen die kommerziellen Regeln hinter einer modernen Restaurant-Speisekarte nicht abbilden können.
+
+Dieses Toolkit verwandelt diese Menübeziehungen in ein strukturiertes, formelgetriebenes Konfigurationssystem. Statt doppelte Belagslisten für jeden Artikel zu pflegen und Preise manuell zu prüfen, definieren Sie Zutaten, Modifier-Gruppen und Preisregeln einmal – und wenden sie konsistent auf Ihre gesamte Speisekarte an.
 
 ---
 
-## Über mich
+## Manuelle Menü-Tabellen vs. strukturiertes POS-Menü-Konfigurations-Toolkit
 
-Ich entwickle leichtgewichtige Excel- und browserbasierte Entscheidungsunterstützungstools für operative Probleme, die schwierig werden, wenn zu viele bewegliche Teile gleichzeitig verwaltet werden müssen.
+| Restaurant-Menü-Konfigurations-Herausforderung | Manuelle Tabellen & direkte POS-Bearbeitungen (ohne dieses Tool) | Strukturiertes Menü-Stamm- & Preis-Toolkit (mit diesem Tool) |
+|---|---|---|
+| **Fragmentierung der Menü-Stammdaten** | Kategorien, Artikelgrößen und Modifier-Preise liegen in unverbundenen Tabs oder unsortierten CSV-Exporten und verursachen Versionschaos bei Menü-Updates. | Relationale Stammtabellen trennen Kategorien, Basisartikel und größen-spezifische Preismatrizen und bewahren dabei automatische ID-Lookups. |
+| **Doppelte Modifier- & Belagspflege** | Derselbe Käse, dieselbe Sauce oder derselbe Belag wird über Dutzende Menüartikel hinweg wiederholt eingegeben, was zu uneinheitlichen Namen und veralteten Aufpreispreisen führt. | Jeder Zutaten-Modifier wird einmal in einer zentralen Bibliothek angelegt und über wiederverwendbare Modifier-Gruppen mit mehreren Gerichten verknüpft. |
+| **Preisfehler bei Spezialartikeln & Standardrezepturen** | Standardmäßig enthaltene Beläge auf Spezialpizzen oder Burgern werden fälschlich als bezahlte Extras abgerechnet, wenn Kunden ihre Bestellung anpassen. | Das Standardrezeptur-Mapping unterscheidet automatisch eingebaute Standardmengen ($0-Berechnung) von bezahlten „Extra“-Upgrades. |
+| **Inkonsistente halbe-Pizza- & Fraktionspreise** | Mitarbeitende berechnen Belagsgebühren für linke Hälfte, rechte Hälfte und ganze Pizza manuell, was zu Rechnungsfehlern und Rätselraten an der Kasse führt. | Globale fraktionale Preisfaktoren berechnen halbe Belagsportionen automatisch aus dem Referenzsatz für ganze Pizzen. |
+| **Defekte POS-Modifier-Auswahlregeln** | Mindestauswahlen und maximale Belagsgrenzen werden beim Setup vergessen, sodass unmögliche Bestellungen das Küchendisplay erreichen. | Constraint-Regeln auf Modifier-Gruppen-Ebene erzwingen explizite Min/Max-Auswahllimits und Mengengrenzen pro Artikel während der POS-Vorbereitung. |
+| **Live-POS-Bereitstellungs- & Synchronisierungsfehler** | Ungeprüfte Preise und unvollständige Artikelzeilen werden direkt in Live-POS-Terminals eingegeben und verursachen Kassenausfälle während der Stoßzeiten. | Eingebaute QA-Validierung markiert fehlende Daten, simuliert Kundenbons und erzeugt eine saubere, vorab geprüfte POS-Exporttabelle. |
 
-Anstatt bestehende Geschäftssysteme zu ersetzen, ordnen diese Tools die Informationen, die für die nächste operative Entscheidung nötig sind. Die **Restaurant Menu Master Workbook** ist ein Beispiel für diesen Ansatz: Sie macht komplexe Speisekartenbeziehungen zu einem wiederverwendbaren Rahmen, der leichter zu pflegen, zu prüfen und mit der Zeit zu verbessern ist.
+---
+
+## Für wen diese Restaurant-Menü- & Preisvorlage gedacht ist (Zielrollen & Anwendungsfälle)
+
+Gebaut für unabhängige Restaurants, Pizzerien, Schnellrestaurants (QSR), Fast-Casual-Konzepte und Gastronomiebetriebe mit mehreren Standorten, die Menüs in mehreren Größen, gemeinsame Zutaten-Modifier, bedingte Aufpreise und strenge Kundenbestellregeln verwalten.
+
+### Rollenbasierte Suchszenarien & betriebliche Anwendungsfälle
+
+- **Pizzeria-Betreiber & unabhängige Restaurantbetreiber (`Pizza Menu Pricing Calculator & Topping Spreadsheet`)**
+  Verlieren Sie kein Geld mehr an nicht abgerechnete Extra-Beläge oder berechnen Sie Kunden auf Spezialpizzen nicht zu viel. Modellieren Sie Multiplikatoren für ganze vs. halbe Pizzen, größenabhängige Zuschläge und enthaltene Rezepturzutaten, bevor Sie Ihre physischen Tafeln oder Ihr Online-Bestellmenü aktualisieren.
+- **QSR- & Fast-Casual-Betriebsmanager (`Multi-Size Restaurant Menu Management Template`)**
+  Standardisieren Sie Menühierarchien, Kombi-Modifier-Gruppen und saisonale Preisanpassungen über mehrere Produktkategorien hinweg in einer zentralen Offline-Stammdatei – ohne auf fehleranfällige VBA-Skripte angewiesen zu sein.
+- **POS-Onboarding-Spezialisten & Menü-Administratoren (`Restaurant POS Menu Staging & Import Checklist`)**
+  Bereinigen, strukturieren und validieren Sie rohe Menüdaten, bevor Sie Datenbanken in Toast, Square, Clover, Lightspeed oder eigenen POS-Plattformen aufbauen oder aktualisieren. Finden Sie fehlende Basispreise und defekte Modifier-Min/Max-Regeln, bevor Sie live gehen.
+- **Restaurantberater & Menü-Engineers (`Menu Engineering & Modifier Architecture Toolkit`)**
+  Liefern Sie Hospitality-Kunden eine wiederholbare, prüfungsfähige Menükonfigurations-Arbeitsmappe. Strukturieren Sie chaotische Kundenmenüs in logische Modifier-Gruppen um und demonstrieren Sie bei Beratungseinsätzen die exakten Kunden-Kassenpreise.
+
+**Für wen dieses Toolkit NICHT gedacht ist:**
+Gastronomiebetriebe, die ein Live-Point-of-Sale-Terminal, einen Kreditkarten-Zahlungsabwickler, ein Küchendisplay-System (KDS), einen Rohbestands-Verbrauchstracker oder einen automatisierten Rezeptur-Nährwertrechner suchen. Dieses Toolkit ist ein **Menü-Stammsystem vor dem POS, ein Preissimulator und ein Konfigurations-QA-System** – es bereitet Ihre kommerzielle Menülogik vor und validiert sie, damit Ihre POS-Plattform ohne Preisfehler läuft.
+
+---
+
+## Die Geschäftslogik & Methodik: Versteckte blinde Flecken bei Restaurantpreisen beseitigen
+
+*(Geschrieben für Restaurantbesitzer und Betreiber – keine technischen oder fortgeschrittenen Tabellenkalkulationskenntnisse erforderlich)*
+
+Wenn Kunden Essen bestellen, wirkt Menüpreisgestaltung auf den ersten Blick einfach: Artikel auswählen, Belag hinzufügen, Gesamtsumme zahlen. Hinter der Theke verlieren die meisten unabhängigen Restaurants jedoch Geld oder frustrieren Kunden wegen **drei versteckter kommerzieller blinder Flecken**, die Standard-Tabellen nicht erkennen.
+
+So schützt die Geschäftslogik in diesem Toolkit Ihre Gewinnmargen und das Kundenerlebnis – einfach erklärt:
+
+### 1. Das Problem „Eine Aktualisierung, zehn Fehler“ beseitigen (Single Source of Truth)
+* **Der blinde Fleck:** Angenommen, der Großhandelspreis für Mozzarella oder Bacon springt um 20 %. In einer typischen Restaurant-Tabelle wird „Extra Bacon“ separat unter Burgern, Sandwiches, Salaten und Pizzen aufgeführt. Aktualisieren Sie den Preis an drei Stellen und vergessen die vierte, verlieren Sie entweder Gewinnmarge oder verwirren Kunden mit inkonsistenten Preisen.
+* **So löst es das Toolkit:** Sie geben jede Zutat und jeden Modifier **einmal** in einer zentralen Liste ein. Ob diese Zutat bei 2 Artikeln oder 50 Artikeln verwendet wird – die Aktualisierung ihres Preises in einer einzigen Zelle aktualisiert automatisch jeden verbundenen Menüartikel und jede Bestellberechnung in der gesamten Arbeitsmappe.
+
+### 2. Die Falle der „Spezialartikel-Doppelabbuchung“ verhindern (bedingte Rezepturpreisgestaltung)
+* **Der blinde Fleck:** Wenn ein Kunde eine „Meat Lover's Pizza“ oder einen „Deluxe-Burger“ bestellt, zahlt er bereits einen höheren Basispreis, weil Salami, Wurst oder Käse in der Rezeptur enthalten sind. Behandelt Ihr Menü-Setup jeden Belag gleich, berechnet Ihr System dem Kunden möglicherweise *erneut* etwas, nur weil er die Standardzutaten bestätigt – oder wenn Sie alle Beläge kostenlos machen, um Beschwerden zu vermeiden, verlieren Sie Geld, sobald jemand *doppeltes* Fleisch verlangt.
+* **So löst es das Toolkit:** Die Vorlage trennt **„Standardmäßig enthalten“** von **„Bezahlt Extra“**. Sie weiß, dass 1x Salami auf einer Salami-Pizza $0.00 extra kostet, während die Erhöhung der Menge auf 2x (Extra Salami) automatisch den exakten Upgrade-Preis berechnet. Sie schützen das Vertrauen der Kunden, ohne Essen zu verschenken.
+
+### 3. Kassenrätselraten bei halben Belägen & Größen stoppen (proportionale Preislogik)
+* **Der blinde Fleck:** Kunden fragen häufig nach Belägen nur auf der linken oder rechten Hälfte einer Pizza oder wechseln zwischen Klein-, Mittel- und Großgrößen. Ohne eine klare Formel berechnen Mitarbeitende entweder den vollen Ganz-Pizza-Belagspreis (verärgert die Kunden) oder halbieren Preise manuell ohne Berücksichtigung des Zubereitungsaufwands (schadet Ihren Margen).
+* **So löst es das Toolkit:** Sie legen eine einzige Regel fest – z. B. „Ein Belag auf der halben Pizza kostet 60 % eines Belags auf der ganzen Pizza.“ Das Toolkit berechnet automatisch den exakten, centgenauen Betrag für Platzierungen auf linker Hälfte, rechter Hälfte und ganze Pizza in jeder Pizzagröße.
+
+### 4. Unmögliche Küchenbons blockieren (Min/Max-Auswahl-Schutzleisten)
+* **Der blinde Fleck:** Bestellt ein Kunde online ein Kombi-Menü und vergisst, eine Pflichtbeilage zu wählen – oder wählt 12 kostenlose Saucen, obwohl nur 2 erlaubt sind – muss Ihr Küchenpersonal das Kochen unterbrechen, den Kunden anrufen oder die Kosten schlucken.
+* **So löst es das Toolkit:** Sie definieren einfache Grenzregeln für jede Optionsgruppe (z. B. *„Mindestens 1 Boden wählen; maximal 1“* oder *„Bis zu 4 Standardbeläge wählen“*). Der eingebaute Bestellsimulator prüft Ihr Menü sofort gegen diese Regeln und zeigt Ihnen, ob ein Kunde versehentlich eine ungültige Bestellung aufgeben könnte.
+
+### 5. Testen, bevor Sie live gehen (POS-vorgelagerte Qualitätssicherung)
+* **Der blinde Fleck:** Die meisten Restaurants entdecken Menüpreisfehler *erst nachdem* sie ihr POS-System aktualisiert haben – meist wenn ein Stoßzeiten-Kunde an der Kasse reklamiert oder eine Online-Liefer-App den falschen Gesamtbetrag berechnet.
+* **So löst es das Toolkit:** Das Toolkit fungiert als sicherer „Crashtest-Dummy“ für Ihr Menü. Sie können echte Kundenbestellungen simulieren, den exakten Bon vor und nach Steuern sehen und ein automatisches Status-Dashboard prüfen, das fehlende Preise rot markiert. Sie exportieren Ihr Menü erst in Ihr POS, wenn jeder Artikel die Prüfung bestanden hat.
+
+---
+
+## Über den Ersteller
+
+Ich baue praktische, formelgetriebene Business-Tools, die chaotische Betriebsdaten in strukturierte, wiederholbare Entscheidungsunterstützungs-Workflows verwandeln.
+
+Die meisten unabhängigen Restaurants und Kleinunternehmen haben ihre Preisdaten bereits, aber sie sind gefangen in unverbundenen Tabellen, unordentlichen POS-Exporten und undokumentierten Gewohnheiten der Mitarbeitenden. Die eigentliche betriebliche Herausforderung besteht darin, diese Aufzeichnungen zu verbinden, konsistente Preisregeln durchzusetzen und Konfigurationsfehler abzufangen, bevor sie zahlende Kunden erreichen.
+
+Das **Restaurant Menu Pricing Calculator & POS Configuration Toolkit** gibt Gastronomiebetreibern Enterprise-Grade-Menüvalidierung in einem transparenten, schlanken Browser- und Excel-Workflow.
+
+- 🌐 **[Testen Sie jetzt den kostenlosen Browser-Menüpreisrechner](https://hyvoid.github.io/restaurant-menu-pricing-template/)**
+- 📥 **[Holen Sie sich die vollständige wiederverwendbare Excel-Menüstamm-Arbeitsmappe (.xlsx)](https://theseusworkshop.com/l/dznbyd?utm_source=github&utm_medium=GitHub%20README&utm_campaign=readme%20new%20launch&utm_content=restaurant-menu-pricing-template)**
+
+
 ## Technische Details
 
 <details>
-<summary><strong>Für technische Prüfer, Excel-Praktiker und Mitwirkende</strong></summary>
+<summary>Für technische Prüfer, Excel-Praktiker und Entwickler — aufklappen, um Arbeitsmappen-Architektur, Preislogik, Formeln und Validierungsregeln einzusehen.</summary>
 
----
+### Arbeitsmappen-Architektur
 
-## Architektur der Arbeitsmappe
+Das Toolkit ist als relationale Menükonfigurations-Datenbank und Preisvalidierungs-Engine konzipiert und nicht als Sammlung unabhängiger Menü-Tabellenblätter.
 
-Die Arbeitsmappe folgt einer geschichteten Architektur, die Master-Daten, Preislogik, Beziehungsverwaltung, Validierung, Simulation und Export trennt. Jedes Tabellenblatt hat eine einzige Aufgabe, sodass sich die Speisekarte aktualisieren lässt, ohne nachgelagerte Berechnungen neu aufzubauen.
+Seine Architektur folgt drei Prinzipien:
 
-```text
-                 SYSTEM PARAMETERS
-                        │
-                        ▼
-             Sys_Params (Global Rules)
-                        │
-                        ▼
-──────────────────────────────────────────────
-        MASTER DATA (Single Source of Truth)
-──────────────────────────────────────────────
-Menu_Categories
-Menu_Subcategories
-Menu_Items
-Item_Sizes
-Modifier_Groups
-Modifiers
-                        │
-                        ▼
-──────────────────────────────────────────────
-      RELATIONSHIP & PRICING LAYER
-──────────────────────────────────────────────
-Modifier_Pricing
-Default_Modifiers
-Group_Assignment
-Selection_Rules
-                        │
-                        ▼
-──────────────────────────────────────────────
-      VALIDATION & CALCULATION
-──────────────────────────────────────────────
-Order_Test
-Dashboard
-                        │
-                        ▼
-──────────────────────────────────────────────
-             OUTPUT
-──────────────────────────────────────────────
-POS_Export
-```
+1. **Single Source of Truth:** Jede Kategorie, jedes Produkt, jede Größe, jeder Modifier und jede Preisregel hat einen festen Stammdaten-Speicherort.
+2. **Wiederverwendbare Beziehungen:** Menüartikel erben Modifier-Gruppen über Zuweisungen auf Kategorie- oder Artikelebene, statt Konfigurationsdatensätze zu duplizieren.
+3. **Automatisierte Validierung und Ausgabe:** Dynamische Formeln verbinden die Stammdaten, berechnen Kundenpreise, erkennen Konfigurationsfehler und erzeugen standardisierte POS-Exportdatensätze.
 
-| Ebene | Tabellenblätter | Zweck |
-|---------|------------|---------|
-| Globale Parameter | Sys_Params | Zentrale Preismultiplikatoren, Steuersätze, Währung und Rechenskonstanten |
-| Master-Daten | Categories, Subcategories, Items, Sizes, Modifier Groups, Modifiers | Pflege wiederverwendbarer Speisekartenobjekte |
-| Beziehungsebene | Group Assignment, Default Modifiers, Selection Rules | Legt fest, wie Menüpunkte mit Modifiern interagieren |
-| Preisebene | Modifier Pricing | Erzeugt Modifier-Preise automatisch anhand zentraler Regeln |
-| Validierungsebene | Dashboard, Order Test | Erkennt Konfigurationsprobleme und prüft Preisergebnisse |
-| Ausgabeebene | POS Export | Erzeugt abgeflachte Strukturen für den POS-Import |
+Die Arbeitsmappe enthält fünf Funktionsmodule und 13 Arbeitsblätter.
 
-### Datenfluss
+#### 1. Globale Parameter & Preisregeln
 
-```
-Restaurant Menu
-        │
-        ▼
-Master Data Tables
-        │
-        ▼
-Relationship Validation
-        │
-        ▼
-Pricing Engine
-        │
-        ▼
-Order Simulation
-        │
-        ▼
-Integrity Validation
-        │
-        ▼
-POS Export
-```
+| Arbeitsblatt | Zuständigkeit |
+|---|---|
+| `00_Param_Config` | Zentralisiert Währung, Steuersatz, Faktoren für ganze/halbe Portionen, Premium-Modifier-Zuschläge, betriebliche Schwellenwerte, Statuskennzeichnungen und bedingte Preisregeln. |
 
-Jede Berechnung basiert auf strukturierten Master-Daten statt auf duplizierten Preistabellen. Das reduziert den Pflegeaufwand und verbessert die Konsistenz.
+Dieses Arbeitsblatt ist die globale Steuerungsebene. Preisannahmen und Geschäftsstatus-Kennungen werden zentral gepflegt, statt als feste Werte in einzelnen Berechnungsformeln eingebettet zu sein.
 
----
+#### 2. Menü-Produktstammdaten
 
-## Drei Fallstricke, die selbst erfahrene Restaurantbetreiber ereilen
+| Arbeitsblatt | Zuständigkeit |
+|---|---|
+| `01_Menu_Categories` | Pflegt Menükategorien, Unterkategorien, Anzeigereihenfolge und Kategorieverfügbarkeit. |
+| `02_Menu_Items` | Speichert einzelne Produktidentitäten, Beschreibungen, Kategoriebeziehungen, Produkttypen und Verfügbarkeit. |
+| `03_Item_Sizes` | Speichert größen-spezifische Produktpreise und verknüpft jede Größe mit ihrem übergeordneten Menüartikel. |
 
-### Fallstrick 1 — Kunden werden für Standardzutaten zweimal abgerechnet
+Die Trennung zwischen Produktidentität und größen-spezifischer Preisgestaltung verhindert, dass sich der Produktstamm bei jeder neuen Größe oder Preioption horizontal ausweitet.
 
-Für eine Spezialpizza wird eine Preisentscheidung getroffen.
+#### 3. Wiederverwendbare Modifier & mehrdimensionale Preisgestaltung
 
-Der Betreiber nimmt an, das Hinzufügen von Pepperoni löse immer eine Modifier-Gebühr aus.
+| Arbeitsblatt | Zuständigkeit |
+|---|---|
+| `04_Modifier_Groups` | Definiert kundensichtbare Modifier-Gruppen und ihren betrieblichen Geltungsbereich. |
+| `05_Modifiers` | Pflegt global wiederverwendbare Zutaten- und Modifier-Identitäten. |
+| `06_Modifier_Pricing` | Speichert Modifier-Preise nach Produktgröße und Portionsebene, mit Berechnungen für die Platzierung auf ganzer Pizza, linker Hälfte oder rechter Hälfte. |
 
-Die gewählte Pizza enthält Pepperoni jedoch bereits als Standardzutat.
+Dieselbe Zutat kann über mehrere Produkte hinweg wiederverwendet werden, ohne separate Kopien ihres Stammdatensatzes anzulegen.
 
-Das Ergebnis ist eine unnötige Zusatzgebühr, die Kunden sofort bemerken.
+#### 4. Beziehungsmapping & Auswahl-Constraints
 
-| Falsche Logik | Korrekte Logik |
-|-----------------|---------------|
-| Jeder gewählte Modifier erzeugt Umsatz. | Prüfen Sie zuerst, ob der Modifier bereits zur Standardrezeptur des Produkts gehört, bevor Sie berechnen. |
+| Arbeitsblatt | Zuständigkeit |
+|---|---|
+| `07_Default_Modifiers` | Ordnet Spezialprodukten ihre enthaltenen Zutaten und Standardmengen zu. |
+| `08_Group_Assignment` | Weist Modifier-Gruppen entweder auf Kategorieebene oder auf Artikelebene zu. |
+| `09_Selection_Rules` | Steuert Mindestauswahlen, Höchstauswahlen, Pflichtgruppen und Mehrfachauswahl-Berechtigungen. |
 
-Ohne Identifikation der Standardzutaten werden Speisekartenpreise zwischen Spezialpizzen und Selbst zusammenstellbaren Produkten inkonsistent.
+Dieses Modul bestimmt, welche Modifier-Gruppen für jedes Produkt gelten und ob die resultierende Kundenauswahlkonfiguration logisch gültig ist.
 
-Die Arbeitsmappe prüft zuerst die Beziehung **Default_Modifiers**. Ist der Beleg bereits enthalten, erzeugen nur Zusatzportionen wie **Extra** oder **Double** zusätzlichen Umsatz.
+#### 5. Bestellssimulation, POS-Export & Überwachung
 
-Die Empfehlung ändert sich von:
+| Arbeitsblatt | Zuständigkeit |
+|---|---|
+| `10_Order_Test` | Simuliert Kundenauswahlen und berechnet Endpreise unter Prüfung der Einhaltung der Auswahlregeln. |
+| `11_POS_Export` | Erzeugt eine standardisierte Liste verfügbarer Produkte, Größen, Preise, Modifier-Zusammenfassungen und Synchronisierungsstatus. |
+| `12_Dashboard` | Fasst Menügesundheit, Konfigurationsanomalien, Produktverfügbarkeit und POS-Bereitschaft zusammen. |
+
+#### Datenfluss
+
+Der vollständige Datenfluss folgt dieser Sequenz:
 
 ```text
-Normal Pepperoni
-→ Charge: $2.49
+GLOBAL PARAMETERS
+00_Param_Config
+       |
+       v
+MENU MASTER DATA                 MODIFIER MASTER DATA
+01_Menu_Categories              04_Modifier_Groups
+       |                        05_Modifiers
+02_Menu_Items                   06_Modifier_Pricing
+       |                               |
+03_Item_Sizes                           |
+       |                                |
+       +---------------+----------------+
+                       |
+                       v
+             RELATIONSHIP & RULES
+             07_Default_Modifiers
+             08_Group_Assignment
+             09_Selection_Rules
+                       |
+          +------------+-------------+
+          |            |             |
+          v            v             v
+       10_Order     11_POS        12_Dashboard
+         Test       Export
+          |            |             |
+          v            v             v
+       Price QA    POS Update    Configuration
+                                  Monitoring
+````
+
+### Entscheidungsrahmen
+
+Das Toolkit ist um vier betriebliche Entscheidungen herum aufgebaut.
+
+| Entscheidung | Erforderliche Informationen | Entscheidungsergebnis |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Was kann verkauft werden? | Kategorie-, Produkt-, Größen- und Verfügbarkeitsdatensätze. | Identifiziert die gültige Menüstruktur und verfügbare Produktkonfigurationen. |
+| Was sollen Kunden zahlen? | Basispreis, Modifier-Preisgestaltung, enthaltene Zutaten, Portionsmengen, Platzierung und Steuer. | Bestimmt den berechneten Kundenpreis für eine bestimmte Bestellkonfiguration. |
+| Was können Kunden auswählen? | Modifier-Zuweisungen, Gruppenzugehörigkeit, Pflichtstatus und Mindest-/Höchstauswahllimits. | Identifiziert gültige und ungültige Bestellkonfigurationen. |
+| Ist das Menü bereit für die POS-Synchronisierung? | Stammdaten-Integrität, Preisvollständigkeit, Modifier-Beziehungen und Validierungsstatus. | Trennt exportbereite Datensätze von korrekturbedürftigen Datensätzen. |
+
+Der Rahmen unterscheidet drei verschiedene Arten von Informationen:
+
+- Produktfakten: Was das Restaurant verkauft und welche Größen verfügbar sind.
+- Kommerzielle Regeln: Wie Zutaten, Mengen und Platzierung den Verkaufspreis beeinflussen.
+- Betriebliche Constraints: Welche Auswahlen erlaubt sind und ob die Konfiguration bereit für den Einsatz ist.
+
+Diese Trennung verhindert, dass eine Produktbeschreibung, eine Preisannahme und eine Bestelleinschränkung als austauschbare Daten behandelt werden.
+
+### Drei häufige Preis- & Konfigurationsfallen
+
+#### Falle 1 — Doppeltberechnung für bereits enthaltene Zutaten
+
+Die Entscheidung: Den Kundenpreis einer Spezialpizza auf Basis ihrer aufgelisteten Zutaten festlegen.
+
+Der unbemerkte Fehler: Eine herkömmliche Modifier-Berechnung addiert den Standardbelagspreis, unabhängig davon, ob dieser Belag bereits im Spezialprodukt enthalten ist.
+
+Betrachten Sie eine Hawaiian-Pizza mit Schinken und Ananas im Basispreis.
+
+| Kundenauswahl | Falsche Behandlung | Korrekte Behandlung |
+| ------------------ | ----------------------------------------------------------- | -------------------------------------------------- |
+| Normaler Schinken | Addiert eine Belagsgebühr | Keine zusätzliche Berechnung |
+| Light-Ananas | Addiert eine Belagsgebühr | Keine zusätzliche Berechnung |
+| Extra-Schinken | Addiert eine Belagsgebühr ohne Berücksichtigung der Enthaltensein | Wendet die konfigurierte Preisregel für Zusatzmengen an |
+| Extra-Ananas | Verwendet den Standard-Modifier-Preis ohne Prüfung der Enthaltensein | Wendet die konfigurierte Preisregel für Zusatzmengen an |
+
+Der falsche Ansatz behandelt jede ausgewählte Zutat als neuen Kauf. Der korrigierte Ansatz erkennt, dass eine Zutat bereits Teil der kommerziellen Definition des Produkts sein kann.
+
+Das `07_Default_Modifiers`-Mapping identifiziert enthaltene Zutaten. Die bedingten Preisregeln bestimmen dann den anwendbaren Multiplikator basierend auf Enthalten-Status und gewähltem Portionstyp.
+
+#### Falle 2 — Halb-Pizza-Beläge als unabhängige Festpreise behandeln
+
+Die Entscheidung: Diesen Modifier-Preis berechnen, unabhängig davon, ob ein Belag die gesamte Pizza oder nur eine Hälfte bedeckt.
+
+Der unbemerkte Fehler: Die Produktmenge, die den Belag erhält, ändert sich, aber die Preisberechnung spiegelt die gewählte Platzierung nicht wider.
+
+Nehmen wir zum Beispiel an, ein Belag auf der ganzen Pizza kostet $2.00.
+
+| Platzierung | Falscher Preis | Korrekter Preis |
+| --------- | --------------- | ------------- |
+| Ganze | $2.00 | $2.00 |
+| Linke | $2.00 | $1.00 |
+| Rechte | $2.00 | $1.00 |
+
+Der falsche Ansatz berechnet zu viel für Halb-Pizza-Auswahlen, wenn die Preisrichtlinie des Restaurants proportional ist.
+
+Der korrigierte Ansatz leitet Preise für die linke und rechte Hälfte aus der Ganzpreis-Referenz unter Verwendung zentralisierter Preisfaktoren ab.
+
+#### Falle 3 — POS-Menü-Bereitschaft als Dateneingabeaufgabe behandeln
+
+Die Entscheidung: Die neueste Menü-Tabelle nach der Aktualisierung der Produktpreise an den POS-Anbieter senden.
+
+Der unbemerkte Fehler: Eine abgeschlossene Preiseingabe beweist nicht, dass die gesamte Produktkonfiguration gültig ist.
+
+Ein Produkt kann einen Basispreis haben und trotzdem enthalten:
+
+- Einen fehlenden Größendatensatz.
+- Eine ungültige Kategoriebeziehung.
+- Eine nicht verfügbare Modifier-Gruppe.
+- Fehlende Standard-Zutatenzuordnungen.
+- Inkonsistente Mindest- und Höchstauswahlregeln.
+
+| Prüfansatz | Risiko | Korrigierter Ansatz |
+| ----------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------- |
+| Prüfen, ob der Produktname existiert. | Unvollständige Produkte erscheinen bereit. | Produktidentität und Kategoriebeziehungen validieren. |
+| Prüfen, ob ein Basispreis existiert. | Einige verfügbare Größen bleiben ohne Preis. | Jede konfigurierte Produkt-Größen-Kombination validieren. |
+| Prüfen, ob Modifier-Gruppen aufgeführt sind. | Ungültige oder leere Gruppen können das POS erreichen. | Gruppenzugehörigkeit und Auswahl-Constraints validieren. |
+| Das gesamte Menü exportieren. | Fehler werden in die POS-Konfiguration übertragen. | Berechtigte Datensätze exportieren und Synchronisierungsstatus prüfen. |
+
+Der korrigierte Ansatz unterscheidet zwischen abgeschlossener Dateneingabe und betrieblicher Bereitschaft.
+
+### Beispielszenario
+
+Szenario: Testen einer großen Hawaiian-Pizza mit Extra-Ananas auf der linken Hälfte
+
+Ein Restaurant möchte bestätigen, dass seine Spezialpizza-Preisgestaltung korrekt bleibt, wenn Kunden Menge und Platzierung enthaltener Zutaten ändern.
+
+Angenommen, folgende exemplarische Konfiguration:
+
+| Eingabe | Wert |
+| -------------------- | -------------- |
+| Produkt | Hawaiian-Pizza |
+| Größe | Groß |
+| Basispreis | $18.00 |
+| Enthaltene Zutaten | Schinken, Ananas |
+| Gewählter Modifier | Ananas |
+| Gewählte Menge | Extra |
+| Platzierung | Linke |
+| Ganz-Modifier-Preis | $2.00 |
+| Faktor linke Hälfte | 0.50 |
+| Umsatzsteuer | 8.00% |
+
+Schritt 1 — Die enthaltene Zutat identifizieren.
+
+Ananas ist als enthaltene Zutat für die Hawaiian-Pizza gemappt. Dem Kunden wird daher die standardmäßige, enthaltene Menge nicht erneut berechnet.
+
+Schritt 2 — Den anwendbaren Mengenmultiplikator bestimmen.
+
+Der Kunde wählt Extra statt Normal. Gemäß der exemplarischen Regelmatrix erhält eine enthaltene Zutat, die als Extra gewählt wird, einen Multiplikator von 1.00.
+
+Schritt 3 — Den platzierungsangepassten Modifier-Preis berechnen.
+
+```
+Whole Modifier Price = $2.00
+
+Left Half Price = $2.00 × 0.50
+
+Raw Portion Price = $1.00
+
+Applicable Multiplier = 1.00
+
+Additional Charge = $1.00 × 1.00
+
+Additional Charge = $1.00
 ```
 
-zu
+Schritt 4 — Den Kundenpreis berechnen.
 
-```text
-Normal Pepperoni
-Already Included
-→ Charge: $0.00
-```
+| Berechnung | Betrag |
+| --------------------------- | ------ |
+| Große Hawaiian-Pizza | $18.00 |
+| Extra-Ananas — Linke Hälfte | $1.00 |
+| Zwischensumme vor Steuern | $19.00 |
+| Umsatzsteuer (8%) | $1.52 |
+| Endgültiger Kundenpreis | $20.52 |
 
-<details>
-<summary>Formellogik</summary>
+Analytische Interpretation
 
-```excel
-IF(
- Is_Default="Y",
- IF(
-   Portion="Normal",
-   0,
-   ExtraPrice-NormalPrice
- ),
- FullModifierPrice
-)
-```
+Ein herkömmlicher Belagsrechner würde möglicherweise den Standard-Ananaspreis erneut berechnen, selbst wenn die Zutat bereits enthalten ist. Alternativ würde ein Rechner, der die Platzierung ignoriert, die vollen $2.00 für eine Halb-Pizza-Auswahl berechnen.
 
-</details>
+Das korrekte Ergebnis spiegelt beide kommerziellen Bedingungen wider: den Status der enthaltenen Zutat und die gewählte Platzierung.
 
----
+Entscheidungsimplikation: Das Restaurant kann den kundensichtbaren Preis validieren, bevor es sein Live-Menü ändert, was das Risiko inkonsistenter Berechnungen und vermeidbarer POS-Korrekturen reduziert.
 
-### Fallstrick 2 — Die Halb-Pizza-Preislogik wird inkonsistent
+Dieses Szenario veranschaulicht die konfigurierte Preislogik. Tatsächliche Ergebnisse hängen von der eigenen Preismatrix, den Modifier-Preisen und den Steuereinstellungen des Restaurants ab.
 
-Das Restaurant führt Beläge für die linke und rechte Hälfte ein.
 
-Das Personal schätzt manuell, eine „halbe" Portion solle etwa den halben Preis kosten.
+### Formelreferenz
 
-Monate später verwenden verschiedene Modifier unterschiedliche Annahmen.
+Die Arbeitsmappe verwendet native Excel-Dynamic-Array-Funktionen, um Beziehungen zwischen Menüdatensätzen zu pflegen, Preise zu berechnen und Validierungsausgaben zu erzeugen.
 
-Manche berechnen 50 %.
-
-Manche berechnen 60 %.
-
-Andere werden vollständig vergessen.
-
-Die Preisgestaltung wird bei identischen Produkten inkonsistent.
-
-| Falsche Logik | Korrekte Logik |
-|-----------------|---------------|
-| Halbpreise separat speichern. | Halbpreise aus einem globalen Parameter berechnen. |
-
-Die Arbeitsmappe speichert nur den vollen Modifier-Preis.
-
-Die Halb-Preislogik wird automatisch über einen zentralen Multiplikator erzeugt.
-
-Die Aktualisierung eines einzelnen Parameters aktualisiert sofort jeden betroffenen Modifier.
-
-Beispiel:
-
-```text
-Whole Pepperoni
-$2.40
-```
-
-wird zu
-
-```text
-Half Pricing Factor
-0.50
-
-Left Half
-$1.20
-
-Right Half
-$1.20
-```
-
-anstatt Hunderte doppelter Werte manuell zu pflegen.
-
-<details>
-<summary>Formellogik</summary>
-
-```excel
-Final Price =
-Base Price *
-Half Factor *
-Portion Multiplier
-```
-
-</details>
-
----
-
-### Fallstrick 3 — Speisekarten-Updates zerstören POS-Importe
-
-Ein Restaurant führt mehrere saisonale Menüpunkte ein.
-
-Neue Modifier werden hinzugefügt.
-
-Eine Modifier-Gruppe wird beim Mapping vergessen.
-
-Innerhalb von Excel wirkt die Speisekarte vollständig, scheitert aber nach dem Import in das POS-System.
-
-Das zugrunde liegende Problem ist nicht die Preislogik.
-
-Es ist die Integrität der Beziehungen.
-
-| Falsche Logik | Korrekte Logik |
-|-----------------|---------------|
-| Nur Preise prüfen. | Vor dem Export sowohl Preise als auch Beziehungen prüfen. |
-
-Die Arbeitsmappe prüft:
-
-- verwaiste Modifier-Gruppen
-- fehlende Größenangaben
-- unvollständige Kategoriezuordnungen
-- fehlende Preisregeln
-- ungültige Modifier-Referenzen
-
-Das Dashboard macht diese Probleme vor dem Export sichtbar statt erst nach dem Bereitstellen.
-
-<details>
-<summary>Formellogik</summary>
-
-```excel
-FILTER(
- MissingItems,
- ISNA(
-   MATCH(...)
- )
-)
-```
-
-</details>
-
----
-
-## Beispielszenario
-
-Ein Pizzarestaurant führt eine neue **BBQ Chicken Pizza** in den Größen Small, Medium und Large ein.
-
-Das Produkt enthält:
-
-- BBQ Sauce
-- Chicken
-- Mozzarella
-- Red Onion
-
-Ein Kunde gibt folgende Bestellung auf:
-
-| Element | Auswahl |
-|------|-----------|
-| Produkt | BBQ Chicken Pizza |
-| Größe | Large |
-| Default Chicken | Keep |
-| Pepperoni | Add Extra |
-| Mushroom | Left Half |
-| BBQ Sauce | Normal |
-
-Die Preis-Engine führt folgende Schritte aus.
-
-1. Abrufen des Grundpreises für die Pizza in Größe Large.
-2. Erkennen von Chicken und BBQ Sauce als Standardzutaten.
-3. Keine Berechnung für unveränderte Standardzutaten.
-4. Abrufen des Modifier-Preises für Pepperoni.
-5. Anwendung des Extra-Multiplikators.
-6. Abrufen der Preise für Mushroom.
-7. Anwendung des Halb-Pizza-Multiplikators.
-8. Summierung aller Komponenten zum Endpreis der Bestellung.
-
-Beispielrechnung:
-
-| Komponente | Betrag |
-|-----------|--------|
-| Large Pizza | $18.99 |
-| Pepperoni (Extra) | $5.24 |
-| Mushroom (Left Half) | $0.88 |
-| Default Ingredients | $0.00 |
-| **Gesamt** | **$25.11** |
-
-Im laufenden Betrieb ist das Restaurant nicht mehr darauf angewiesen, dass Personal sich Preisausnahmen merkt.
-
-Jede Kundenbestellung folgt derselben Preislogik – unabhängig davon, wer die Speisekarte pflegt.
-
----
-
-## Formelreferenz
-
-<details>
-<summary>Master-Daten-Lookups</summary>
+Kernfunktionen umfassen:
 
 | Funktion | Zweck |
-|----------|---------|
-| XLOOKUP | Artikelnamen, Kategorien, Modifier-Namen und Grundpreise abrufen |
-| MATCH | Vorhandensein von Beziehungen prüfen |
-| IFERROR | Sichere Standardwerte liefern, wenn Referenzen fehlen |
+|---|---|
+| `LET` | Benennt Zwischenberechnungen und hält komplexe Formeln lesbar. |
+| `FILTER` | Extrahiert gültige Datensätze und erzeugt dynamisch Ausgabelisten. |
+| `XLOOKUP` | Ruft zugehörige Produkt-, Kategorie-, Modifier- und Preisinformationen ab. |
+| `COUNTIF` / `COUNTIFS` | Zählt Datensätze und prüft Auswahl- oder Konfigurationsbedingungen. |
+| `UNIQUE` | Erzeugt eindeutige Kategorie- und Produktkennungen. |
+| `SUM` / `SUMIFS` | Aggregiert Modifier-Gebühren und Geschäftswerte. |
+| `IF` / `AND` / `OR` | Wendet Preisbedingungen und Validierungsregeln an. |
+| `ROUND` | Steuert die Genauigkeit monetärer Berechnungen. |
+| `AVERAGEIFS` | Berechnet durchschnittliche Startpreise auf Kategorieebene. |
 
-Beispiel:
+#### 1. Globale Parameter — `00_Param_Config`
+
+Das Parameterblatt pflegt zwei Arten von Steuerungen:
+
+**Statische Konfigurationsparameter**
+
+| Parameter | Referenz | Zweck |
+|---|---|---|
+| Währungssymbol | `B3` | Steuert die monetäre Darstellung. |
+| Umsatzsteuersatz | `B4` | Berechnet die endgültigen Kundenpreise. |
+| Faktor linke Hälfte | `B5` | Berechnet Modifier-Preise für die linke Hälfte. |
+| Faktor rechte Hälfte | `B6` | Berechnet Modifier-Preise für die rechte Hälfte. |
+| Faktor ganze Portion | `B7` | Steuert die Preisgestaltung für ganze Portionen. |
+| Premium-Modifier-Zuschlag | `B8` | Liefert die konfigurierte Premium-Preisanpassung. |
+| Warnschwelle Modifier-Gruppen | `B9` | Markiert übermäßige Modifier-Gruppen-Zuweisungen. |
+| Warnschwelle hohe Preise | `B10` | Identifiziert ungewöhnlich hohe Produktpreise. |
+| POS-Export-Verfügbarkeitsbaseline | `B11` | Definiert den Status, der für das Filtern beim POS-Export verwendet wird. |
+| Standard-Aktivstatus | `B12` | Zentralisiert die Aktivstatus-Kennung. |
+| Enthalten-Status | `B13` | Identifiziert standardmäßig enthaltene Zutaten. |
+| Standard-Modifier-Stufe | `B14` | Identifiziert die Standard-Modifier-Stufe. |
+
+**Bedingte Preismatrix**
+
+Der Bereich `E3:J10` pflegt die bedingten Preisregeln.
+
+Seine Logik kombiniert:
+
+- Enthalten-Status-Bedingung
+- Auswahltyp-Bedingung
+- Preismultiplikator-Ergebnis
+
+Ein zusammengesetzter Lookup-Schlüssel wird erzeugt, um die Bedingungen mit dem Preismultiplikator zu verbinden.
+
+Dies verhindert, dass dieselben Preisannahmen unabhängig voneinander in mehrere Arbeitsblätter eingebettet werden.
+
+#### 2. Menü-Stammdaten — `01_Menu_Categories`, `02_Menu_Items`, `03_Item_Sizes`
+
+**Kategoriehierarchie**
+
+`01_Menu_Categories!H3` erzeugt Kategoriepfade:
 
 ```excel
+=LET(
+    cat_name, FILTER(B3:B100, E3:E100<>""),
+    sub_name, FILTER(F3:F100, E3:E100<>""),
+    cat_name & " > " & sub_name
+)
+````
+
+Die erzeugten Pfade liefern lesbare Kategoriebeziehungen, z. B.:
+
+```
+Pizza > Create Your Own
+Pizza > Gourmet Pizza
+Subs > Hot Subs
+```
+
+Anzahl aktiver Produkte pro Unterkategorie
+
+`01_Menu_Categories!I3`:
+
+```
+=LET(
+    sub_ids, FILTER(E3:E100, E3:E100<>""),
+    COUNTIFS(
+        '02_Menu_Items'!D3:D500, sub_ids,
+        '02_Menu_Items'!G3:G500, '00_Param_Config'!$B$12
+    )
+)
+```
+
+Kategorie-Konfigurationsstatus
+
+`01_Menu_Categories!J3`:
+
+```
+=LET(
+    cat_active, FILTER(D3:D100, E3:E100<>""),
+    item_cnt, I3#,
+    IF(cat_active <> '00_Param_Config'!$B$12, "⏸️ 已停用",
+        IF(item_cnt = 0, "⚠️ 空分类预警", "✅ 正常")
+    )
+)
+```
+
+Produkt-Größen-Kombinationsschlüssel
+
+`03_Item_Sizes` erzeugt einen Kombinationsschlüssel mit:
+
+```
+=Item_ID & "|" & Size_ID
+```
+
+Zum Beispiel:
+
+```
+ITM001|SZ_SM
+ITM001|SZ_LG
+```
+
+Dieser Schlüssel ermöglicht der Arbeitsmappe, zwischen mehreren Größen desselben Produkts zu unterscheiden.
+
+Produkt-Größen-Preisvalidierung
+
+Die Preisvalidierungsebene prüft, ob ein konfigurierter Größenpreis fehlt, ungültig ist oder die zentrale Warnschwelle überschreitet.
+
+Der resultierende Status wird sowohl vom Produktstamm als auch vom POS-Exportprozess verwendet.
+
+#### 3. Modifier-Stammdaten & Preisgestaltung — `04_Modifier_Groups`, `05_Modifiers`, `06_Modifier_Pricing`
+
+Anzahl aktiver Modifier
+
+`04_Modifier_Groups!F3`:
+
+```
+=LET(
+    grp_ids, FILTER(A3:A100, A3:A100<>""),
+    COUNTIFS(
+        '05_Modifiers'!B3:B500, grp_ids,
+        '05_Modifiers'!E3:E500, '00_Param_Config'!$B$12
+    )
+)
+```
+
+Auswahlregel-Lookup für Modifier-Gruppen
+
+`04_Modifier_Groups!G3`:
+
+```
+=LET(
+    grp_ids, FILTER(A3:A100, A3:A100<>""),
+    XLOOKUP(
+        grp_ids,
+        '09_Selection_Rules'!A3:A100,
+        '09_Selection_Rules'!B3:B100,
+        -1
+    )
+)
+```
+
+Der entsprechende Höchstauswahl-Lookup verwendet Spalte C in `09_Selection_Rules`.
+
+Ein Rückgabewert von `-1` kennzeichnet eine fehlende Regel.
+
+Modifier-Preisdimensionen
+
+`06_Modifier_Pricing` pflegt die Beziehung zwischen:
+
+```
+Modifier ID
+    +
+Size ID
+    +
+Selection Type
+```
+
+Der zusammengesetzte Preisschlüssel unterstützt das Abrufen des korrekten Modifier-Preises für eine gewählte Produktgröße und Mengenstufe.
+
+Ganz-, Links- und Rechtspreise werden aus den zentralisierten Preisfaktoren abgeleitet.
+
+Die Preisarchitektur trennt den Referenzpreis von der Platzierungsberechnung, sodass restaurant-spezifische Preisrichtlinien angepasst werden können, ohne den Bestellsimulator umzuschreiben.
+
+#### 4. Standardzutaten & Beziehungsmapping — `07_Default_Modifiers`, `08_Group_Assignment`, `09_Selection_Rules`
+
+Standard-Modifier-Lookup-Schlüssel
+
+`07_Default_Modifiers!E3`:
+
+```
+=LET(
+    itm_ids, FILTER(A3:A1000, A3:A1000<>""),
+    mod_ids, FILTER(B3:B1000, A3:A1000<>""),
+    itm_ids & "|" & mod_ids
+)
+```
+
+Produktname-Referenz
+
+`07_Default_Modifiers!F3`:
+
+```
+=LET(
+    itm_ids, FILTER(A3:A1000, A3:A1000<>""),
+    XLOOKUP(
+        itm_ids,
+        '02_Menu_Items'!A3:A500,
+        '02_Menu_Items'!B3:B500,
+        "❌ 商品ID无效"
+    )
+)
+```
+
+Modifier-Name-Referenz
+
+`07_Default_Modifiers!G3`:
+
+```
+=LET(
+    mod_ids, FILTER(B3:B1000, A3:A1000<>""),
+    XLOOKUP(
+        mod_ids,
+        '05_Modifiers'!A3:A500,
+        '05_Modifiers'!C3:C500,
+        "❌ 配料ID无效"
+    )
+)
+```
+
+Validierung der Standardkonfiguration
+
+`07_Default_Modifiers!H3` prüft:
+
+- Ob die Produkt-ID existiert.
+- Ob die Modifier-ID existiert.
+- Ob dieselbe Produkt-Modifier-Kombination dupliziert ist.
+- Ob der Enthalten-Status korrekt konfiguriert ist.
+
+Zuweisungen auf Kategorie- und Artikelebene
+
+`08_Group_Assignment` verwendet das Feld `Level`, um den Zuweisungsumfang zu unterscheiden:
+
+```
+Level = Category
+    Category ID = valid category
+    Item ID = -
+
+Level = Item
+    Item ID = valid product
+    Category ID = -
+```
+
+Die Zuweisungsvalidierungsebene prüft den effektiven Geltungsbereich und identifiziert ungültige oder übermäßige Zuweisungen.
+
+Auswahlregeln
+
+`09_Selection_Rules` verwendet Regeln auf Gruppenebene, um Folgendes zu bestimmen:
+
+- Mindestauswahlen.
+- Höchstauswahlen.
+- Pflichtstatus.
+- Ob Mehrfachauswahlen erlaubt sind.
+
+Diese Werte werden vom Bestellsimulator und den Validierungsformeln für Modifier-Gruppen referenziert.
+
+#### 5. Kundenpreis-Simulation — `10_Order_Test`
+
+Dieses Arbeitsblatt kombiniert den Basispreis des Produkts mit den tatsächlichen Modifier-Gebühren, die aus der gewählten Bestellkonfiguration erzeugt werden.
+
+Name des gewählten Produkts
+
+`E3`:
+
+```
 =XLOOKUP(
- Item_ID,
- tbl_Items[Item_ID],
- tbl_Items[Item_Name]
+    B3,
+    '02_Menu_Items'!A3:A500,
+    '02_Menu_Items'!B3:B500 & " (" &
+    '02_Menu_Items'!F3:F500 & ")",
+    "⚠️ 请选择有效商品ID"
 )
 ```
 
-</details>
+Basisgrößenpreis
 
-<details>
-<summary>Preis-Engine</summary>
+`E4`:
 
-| Funktion | Zweck |
-|----------|---------|
-| SWITCH | Größenspezifische Preise auswählen |
-| LET | Komplexe Preislogik vereinfachen |
-| IF | Preisbedingungen anwenden |
-| XLOOKUP | Preisdatensätze abrufen |
-
-Beispiel:
-
-```excel
-LET(
- BasePrice,
- PositionFactor,
- PortionFactor,
- FinalPrice
+```
+=XLOOKUP(
+    B3 & "|" & B4,
+    '03_Item_Sizes'!F3#,
+    '03_Item_Sizes'!D3:D1000,
+    0
 )
 ```
 
-</details>
+Gesamter Modifier-Aufpreis
 
-<details>
-<summary>Validierung und Dashboard</summary>
+`E5`:
 
-| Funktion | Zweck |
-|----------|---------|
-| FILTER | Unvollständige Datensätze anzeigen |
-| COUNTA | KPI-Summen |
-| ROWS | Erzeugte Preisregeln zählen |
-| MATCH | Beziehungsprüfung |
+```
+=SUM(J10#)
+```
 
-Beispiel:
+Kundenpreis vor Steuern
 
-```excel
-FILTER(
- tbl_Items[Item_Name],
- ISNA(MATCH(...))
+`E6`:
+
+```
+=E4+E5
+```
+
+Endgültiger Kundenpreis inklusive Steuern
+
+`E7`:
+
+```
+=ROUND(
+    E6 * (1 + '00_Param_Config'!$B$4),
+    2
 )
 ```
 
+Die Modifier-Detailberechnungen folgen dieser Sequenz:
+
+```
+Selected Modifier ID
+        |
+        v
+Modifier Master Lookup
+        |
+        v
+Default Ingredient Recognition
+        |
+        v
+Conditional Pricing Rule Lookup
+        |
+        v
+Size & Portion Price Retrieval
+        |
+        v
+Placement Adjustment
+        |
+        v
+Calculated Line Price
+        |
+        v
+Group Selection Validation
+```
+
+Der Endpreis wird aus der tatsächlichen simulierten Auswahl berechnet und nicht aus einem manuell zusammengestellten Angebot.
+
+#### 6. POS-Export — `11_POS_Export`
+
+Das POS-Export-Arbeitsblatt filtert Produkte dynamisch nach ihrer konfigurierten Verfügbarkeit.
+
+Filterung verfügbarer Produkte
+
+`A3`:
+
+```
+=LET(
+    sz_itm_ids,
+    FILTER(
+        '03_Item_Sizes'!A3:A1000,
+        '03_Item_Sizes'!A3:A1000<>""
+    ),
+    itm_avail,
+    XLOOKUP(
+        sz_itm_ids,
+        '02_Menu_Items'!A3:A500,
+        '02_Menu_Items'!G3:G500,
+        "No"
+    ),
+    FILTER(
+        sz_itm_ids,
+        itm_avail = '00_Param_Config'!$B$11
+    )
+)
+```
+
+Export-Produktname
+
+`B3`:
+
+```
+=XLOOKUP(
+    A3#,
+    '02_Menu_Items'!A3:A500,
+    '02_Menu_Items'!B3:B500,
+    ""
+)
+```
+
+Export-Größenname
+
+`D3`:
+
+```
+=XLOOKUP(
+    A3# & "|" & C3#,
+    '03_Item_Sizes'!F3#,
+    FILTER(
+        '03_Item_Sizes'!C3:C1000,
+        '03_Item_Sizes'!A3:A1000<>""
+    ),
+    ""
+)
+```
+
+Export-Basispreis
+
+`E3`:
+
+```
+=XLOOKUP(
+    A3# & "|" & C3#,
+    '03_Item_Sizes'!F3#,
+    FILTER(
+        '03_Item_Sizes'!D3:D1000,
+        '03_Item_Sizes'!A3:A1000<>""
+    ),
+    0
+)
+```
+
+POS-Synchronisierungsstatus
+
+Die Exportvalidierung kombiniert Produktintegrität und Größenpreis-Validierung.
+
+Die beabsichtigte Ausgabe ist:
+
+```
+READY_FOR_POS
+HOLD_CHECK_ERROR
+```
+
+Der Export ist so konzipiert, dass Änderungen an der Produktkonfiguration leichter überprüft und übertragen werden können. Es handelt sich nicht um eine direkte POS-API-Integration oder einen automatischen Synchronisierungsdienst.
+
+#### 7. Dashboard & Konfigurationsüberwachung — `12_Dashboard`
+
+Das Dashboard kombiniert sechs betriebliche Kennzahlen:
+
+| KPI | Berechnungszweck |
+| ------------------------- | --------------------------------------------- |
+| Aktive Kategorien insgesamt | Zählt aktivierte Menükategorien. |
+| Verfügbare Artikel insgesamt | Zählt verfügbare Produkte. |
+| Wiederverwendbare Modifier insgesamt | Zählt aktivierte Modifier. |
+| Preisregeln insgesamt | Zählt konfigurierte Preisregeln. |
+| Konfigurationsanomalien insgesamt | Aggregiert erkannte Konfigurationsausnahmen. |
+| POS-fertige Artikel | Zählt als exportbereit markierte Datensätze. |
+
+Verfügbare Artikel insgesamt
+
+`C4`:
+
+```
+=COUNTIF(
+    '02_Menu_Items'!G3:G500,
+    '00_Param_Config'!$B$12
+)
+```
+
+Konfigurationsanomalien insgesamt
+
+`F4`:
+
+```
+=COUNTIF('02_Menu_Items'!M3#, "❌*")
++ COUNTIF('03_Item_Sizes'!I3#, "❌*")
++ COUNTIF('04_Modifier_Groups'!I3#, "❌*")
++ COUNTIF('08_Group_Assignment'!I3#, "⚠️*")
++ COUNTIF('09_Selection_Rules'!H3#, "❌*")
+```
+
+Anzahl POS-fertiger Datensätze
+
+`G4`:
+
+```
+=COUNTIF(
+    '11_POS_Export'!I3#,
+    "READY_FOR_POS"
+)
+```
+
+Das Dashboard bietet eine konsolidierte Ansicht des Zustands der Menükonfiguration, während die zugrunde liegenden Arbeitsblätter die detaillierten Aufzeichnungen behalten, die zur Untersuchung und Korrektur einzelner Ausnahmen benötigt werden.
+
+### Validierungsregeln
+
+Das Validierungsframework ist darauf ausgelegt, Fehler zu identifizieren, bevor sie kundensichtbare Preise oder die POS-Konfiguration beeinflussen.
+
+| Feld / Bereich | Validierungsregel | Fehlerverhalten |
+| --------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Kategorie-ID | Muss eindeutig sein und auf eine gültige Kategorie verweisen. | Ungültige Kategoriebeziehungen werden markiert. |
+| Unterkategorie-ID | Muss einer vorhandenen Unterkategorie entsprechen. | Ungültige Produktklassifizierung wird identifiziert. |
+| Kategorie aktiv | Muss die konfigurierten Ja/Nein-Statuswerte verwenden. | Ungültige Statuswerte beeinflussen die Kategorievalidierung. |
+| Artikel-ID | Muss eine eindeutige Produktkennung sein. | Ungültige oder doppelte Produktidentitäten erfordern Korrektur. |
+| Artikelkategorie | Muss auf eine gültige Kategorie und Unterkategorie verweisen. | Die Produktintegritätsvalidierung identifiziert inkonsistente Beziehungen. |
+| Artikelverfügbarkeit | Muss die konfigurierte Aktivstatus-Kennung verwenden. | Ungültige Verfügbarkeit kann korrektes Filtern verhindern. |
+| Artikelgröße | Muss auf eine gültige Produkt-Größen-Kombination verweisen. | Fehlende oder ungültige Produkt-Größen-Datensätze werden markiert. |
+| Basispreis | Muss vorhanden sein und die konfigurierten Preisprüfungen erfüllen. | Fehlende oder anomale Preise verhindern die POS-Bereitschaft. |
+| Modifier-Gruppen-ID | Muss eine eindeutige Gruppenkennung sein. | Ungültige Beziehungen werden markiert. |
+| Modifier-ID | Muss eindeutig sein und auf eine gültige Modifier-Gruppe verweisen. | Modifier-Lookup-Fehler werden identifiziert. |
+| Modifier aktiv | Muss die konfigurierte Aktivstatus-Kennung verwenden. | Inaktive Modifier werden aus den Zählungen aktiver Modifier ausgeschlossen. |
+| Modifier-Preisgestaltung | Muss die erforderlichen Größen- und Auswahltyp-Preisdatensätze enthalten. | Unvollständige Preismatrizen erfordern Korrektur. |
+| Modifier-Stufe | Muss den konfigurierten Modifier-Stufen-Kennungen entsprechen. | Ungültige Stufenklassifizierung beeinflusst die Preisvalidierung. |
+| Standard-Modifier-Mapping | Produkt- und Modifier-IDs müssen existieren. | Ungültige IDs werden markiert. |
+| Standard-Modifier-Eindeutigkeit | Dieselbe Produkt-Modifier-Kombination darf nicht dupliziert werden. | Doppelte Mappings werden markiert. |
+| Enthalten-Status | Muss, wo anwendbar, der konfigurierten Enthalten-Status-Kennung entsprechen. | Falsche Konfiguration der standardmäßigen Einbeziehung wird markiert. |
+| Zuweisungsebene | Muss entweder `Category` oder `Item` sein. | Ungültiger Zuweisungsumfang wird markiert. |
+| Zuweisung auf Kategorieebene | Erfordert eine gültige Kategorie-ID und den vorgeschriebenen Artikel-ID-Platzhalter. | Ungültige Bereichskonfiguration wird markiert. |
+| Zuweisung auf Artikelebene | Erfordert eine gültige Artikel-ID und den vorgeschriebenen Kategorie-ID-Platzhalter. | Ungültige Bereichskonfiguration wird markiert. |
+| Modifier-Gruppen-Zuweisung | Muss auf eine vorhandene Modifier-Gruppe verweisen. | Ungültige Gruppenbeziehungen werden markiert. |
+| Modifier-Gruppen-Kapazität | Die Höchstauswahlzahl darf die Anzahl verfügbarer aktiver Modifier nicht überschreiten. | Die Auswahlkonfiguration erfordert Korrektur. |
+| Pflicht-Modifier-Gruppe | Pflichtgruppen müssen eine Mindestauswahl größer null haben. | Logischer Konflikt wird markiert. |
+| Optionale Modifier-Gruppe | Optionale Gruppen sollten eine Mindestauswahl von null haben. | Inkonsistente Auswahlregeln werden markiert. |
+| Mehrfachauswahl | Muss der konfigurierten Mehrfachauswahl-Berechtigung folgen. | Ungültige Auswahlkonfigurationen erfordern Überprüfung. |
+| Kunden-Testprodukt | Muss auf ein gültiges Produkt verweisen. | Ungültige Produktauswahl zeigt eine Warnung an. |
+| Kunden-Testgröße | Muss auf eine gültige Größe für das gewählte Produkt verweisen. | Fehlender Größenpreis-Lookup liefert ein ungültiges oder Nullpreis-Ergebnis. |
+| Kunden-Modifier-Auswahl | Muss auf einen verfügbaren Modifier verweisen. | Ungültige Modifier-Referenzen erfordern Korrektur. |
+| Kunden-Portionstyp | Muss `Light`, `Normal`, `Extra` oder `Xxtra` verwenden. | Ungültige Auswahlwerte sind keine gültigen Preiseingaben. |
+| Kunden-Platzierung | Muss `Whole`, `Left` oder `Right` verwenden. | Ungültige Platzierungswerte sind keine gültigen Preiseingaben. |
+| Bedingte Preisgestaltung | Muss zur konfigurierten Einbeziehungs- und Mengenregel aufgelöst werden. | Falsche oder fehlende Preiskonfiguration erfordert Untersuchung. |
+| Kundenpreis | Muss den Basispreis, Modifier-Gebühren und den konfigurierten Steuersatz widerspiegeln. | Der Bestellsimulator legt die resultierende Berechnung zur Überprüfung offen. |
+| POS-Export | Produkt- und Größenpreis-Validierung müssen bestanden werden. | `HOLD_CHECK_ERROR` ersetzt `READY_FOR_POS`. |
+
+Wichtige betriebliche Unterscheidung: Die Validierungsebene prüft die konfigurierten Beziehungen und Geschäftsregeln, die in der Arbeitsmappe dargestellt sind. Sie überprüft nicht unabhängig, ob ein POS-Anbieter jedes exportierte Feld akzeptiert oder jedes Preisverhalten unterstützt.
+
 </details>
 
----
-
-## Validierungsregeln
-
-| Feld | Validierungsregel | Fehlerverhalten |
-|-------|-----------------|----------------|
-| Category_ID | Muss in der Category-Tabelle existieren | Kategorie wird abgelehnt |
-| Subcategory_ID | Muss auf eine vorhandene Kategorie verweisen | Beziehungswarnung |
-| Item_ID | Eindeutige Kennung | Duplikatwarnung |
-| SKU_ID | Eindeutige Kombination aus Artikel und Größe | Duplikate werden verhindert |
-| Modifier_ID | Muss vor den Preisregeln existieren | Preisberechnung nicht verfügbar |
-| Modifier Group | Muss vor der Zuordnung existieren | Dashboard-Warnung |
-| Portion Level | Nur Normal, Light, Extra oder Xxtra | Ungültige Auswahl |
-| Position | Nur Whole, Left oder Right | Ungültige Preisregel |
-| Half Pricing Factor | Positive Dezimalzahl | Globaler Preisfehler |
-| Extra Multiplier | Größer als null | Fehler in der Modifier-Preisberechnung |
-| Default Modifier | Muss auf gültigen Artikel und Modifier verweisen | Doppelberechnung wird verhindert |
-| POS Export | Alle Pflichtzuordnungen vollständig | Fehler bei der Exportvalidierung |
-
-Die Arbeitsmappe validiert Beziehungen nach Möglichkeit bewusst vor den Berechnungen. Fehlende Referenzen werden über Dashboard-Warnungen sichtbar gemacht, statt stillschweigend fehlschlagende Berechnungen zuzulassen.
-
-</details>
-
-
----
 
 ## Weitere Tools in dieser Reihe
 
-Diese Tools folgen derselben Philosophie: leichtgewichtige, wiederverwendbare Entscheidungsunterstützungsrahmen für wiederkehrende operative Probleme – kein Ersatz für ERP- oder Unternehmensplattformen.
+Weitere schlanke Business-Entscheidungsunterstützungs-Tools und operative Arbeitsmappen:
 
-- **Inventory Planning & Purchasing Toolkit** — Lagerbestandsinvestition, Servicegrade und Nachbestellentscheidungen unter schwankender Nachfrage ausbalancieren.
-- **Manufacturing Labor Cost & Capacity Planning Toolkit** — Personaleinsatz, Produktionsausbringung und Stückkosten der Fertigung verknüpfen.
-- **Construction Estimate & Cost Tracking Toolkit** — Projektkalkulation, Budgetverfolgung und Fortschrittskontrolle standardisieren.
-- **Retail & Maquila Inventory Ledger** — Bestände vom Großeinkauf über Lohnfertigung bis zum Verkauf fertiger SKUs verfolgen.
-- **Residential Transitional Loan Sizer & Pricer** — Kredithöhe, Preisgestaltung, Hebelwirkung und Risiko für Zwischenfinanzierungen bewerten.
-- **Marketing Budget Allocation Simulator** — Kampagnenszenarien, Budgetnutzung und erwartete Leistung über Kanäle hinweg vergleichen.
-
-Diese Sammlung wird laufend um weitere operative Entscheidungsunterstützungstools ergänzt.
-
----
+\- [Theseus Workshop](https://theseusworkshop.com) — Eine Sammlung praktischer Tools für wiederkehrende kleine betriebliche und finanzielle Probleme.
 
 ## Lizenz
 
-Dieses Projekt steht unter der **Apache License 2.0**.
+Dieses Projekt ist unter der Apache License 2.0 lizenziert.
 
-Sie sind frei, um:
-
-- die Arbeitsmappe für private oder kommerzielle Zwecke zu nutzen.
-- die Arbeitsmappe zu bearbeiten und an Ihre eigenen betrieblichen Anforderungen anzupassen.
-- abgeleitete Versionen gemäß der Apache License 2.0 zu verbreiten.
-
-Bitte behalten Sie den ursprünglichen Lizenzhinweis und die Quellenangabe, wie es die Lizenz verlangt.
-
-Den vollständigen Lizenztext finden Sie in der beiliegenden Datei **LICENSE** in diesem Repository.
-
----
-
-## Mitwirken
-
-Vorschläge zur Verbesserung der Preislogik, der Speisekartenmodellierung, der Validierungsworkflows oder der POS-Kompatibilität sind jederzeit willkommen.
-
-Beiträge können umfassen:
-
-- Unterstützung zusätzlicher POS-Plattformen
-- Verbesserte Validierungsregeln
-- Neue Preismodelle
-- Formeloptimierung
-- Verbesserte Dokumentation
-- Restaurantspezifische Konfigurationsbeispiele
-
-Bitte eröffnen Sie ein Issue oder reichen Sie einen Pull Request mit einer klaren Beschreibung des behandelten operativen Problems ein.
-
----
-
-## Version
-
-**Aktuelle Version**
-
-- Version: **v1.0.0**
-- Lizenz: **Apache License 2.0**
-- Plattform: **Browser + Microsoft Excel 365 / Excel 2021+**
-- Status: **Production Ready**
-
----
-
-> Leichtgewichtige operative Entscheidungsunterstützung für Unternehmen, die bessere Entscheidungen brauchen – nicht größere Software.
+Den vollständigen Lizenztext finden Sie in der LICENSE-Datei.
